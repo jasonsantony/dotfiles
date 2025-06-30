@@ -6,4 +6,4 @@
 
 # Make sure to set this untracked in `~/`
 [include]
-    path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
