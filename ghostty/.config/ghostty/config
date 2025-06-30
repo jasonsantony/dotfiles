@@ -1,0 +1,8 @@
+theme = "Fahrenheit"
+font-family = "Hack Nerd Font"
+background-opacity = 0.8
+background-blur-radius = 20
+mouse-hide-while-typing = true
+macos-titlebar-style = transparent
+macos-titlebar-style = tabs
+macos-option-as-alt = true

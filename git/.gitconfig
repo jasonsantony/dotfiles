@@ -1,0 +1,9 @@
+[pull]
+	rebase = true
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+# Make sure to set this untracked in `~/`
+[include]
+    path = ~/.gitconfig_local
