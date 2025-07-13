@@ -1,7 +1,8 @@
-theme = "Fahrenheit"
+theme = "catppuccin-frappe"
 font-family = "Hack Nerd Font"
-background-opacity = 0.8
-background-blur-radius = 20
+font-size = 14
+# background-opacity = 0.8
+# background-blur-radius = 20
 mouse-hide-while-typing = true
 macos-titlebar-style = transparent
 macos-titlebar-style = tabs
