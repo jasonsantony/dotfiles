@@ -1,7 +1,7 @@
 theme = "catppuccin-frappe"
 font-family = "Hack Nerd Font"
 font-size = 14
-background-opacity = 0.5
+background-opacity = 0.75
 background-blur-radius = 20
 mouse-hide-while-typing = true
 macos-titlebar-style = transparent
