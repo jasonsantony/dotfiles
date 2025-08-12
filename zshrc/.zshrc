@@ -117,13 +117,15 @@ export PATH="/opt/homebrew/bin:$PATH"
 alias python=python3
 alias pip=pip3
 
+# Cursor editor
+alias c='cursor'
+
 # Confirm before doing something bad
 alias cp='cp -i'                          # Confirm before overwriting something
 alias rm='rm -i'
 alias mv='mv -i'
 
 alias q='exit'
-alias c='clear'
 alias lg='lazygit'
 alias grep='grep --color=auto'
 alias dotfiles='cd ~/dotfiles'
