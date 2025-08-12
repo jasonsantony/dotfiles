@@ -128,9 +128,6 @@ alias lg='lazygit'
 alias grep='grep --color=auto'
 alias dotfiles='cd ~/dotfiles'
 alias root='cd /'
-alias ..='cd ..'
-alias ...='cd ..; cd ..'
-alias ....='cd ..; cd ..; cd ..'
 
 alias neofetch='neofetch --ascii "$HOME/.config/neofetch/nerv.txt" --ascii_distro off'
 
