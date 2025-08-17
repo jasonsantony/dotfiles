@@ -133,6 +133,11 @@ alias root='cd /'
 
 alias neofetch='neofetch --ascii "$HOME/.config/neofetch/nerv.txt" --ascii_distro off'
 
+# Hide desktop icons
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+# Show desktop icons
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
 # For cp
 ulimit -s unlimited
 
