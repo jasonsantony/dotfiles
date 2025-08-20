@@ -138,18 +138,31 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 # Show desktop icons
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
+# Cute volume command
+volume() {
+  if [[ -z "$1" ]]; then
+    # No argument -> mute
+    osascript -e "set volume output muted true"
+    echo "Volume muted"
+  elif [[ "$1" =~ ^[0-9]+$ ]] && (( $1 >= 0 && $1 <= 100 )); then
+    # Valid number between 0 and 100
+    osascript -e "set volume output volume $1"
+    echo "Volume set to $1%"
+  else
+    echo "Please provide a number between 0 and 100 (or leave blank to mute)."
+  fi
+}
+alias vol='volume'
+
 # For cp
 ulimit -s unlimited
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Redraw window when ghostty is resized
-TRAPWINCH() {
-  zle && zle reset-prompt
-}
+# TRAPWINCH() {
+#  zle && zle reset-prompt
+# }
 
 # Linux-style dotfiles
 export XDG_CONFIG_HOME="$HOME/.config"
