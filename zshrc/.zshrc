@@ -141,16 +141,30 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Cute volume command
 volume() {
   if [[ -z "$1" ]]; then
-    # No argument -> mute
-    osascript -e "set volume output muted true"
-    echo "Volume muted"
+    # No argument → show current volume
+    local current muted
+    current=$(osascript -e 'output volume of (get volume settings)')
+    muted=$(osascript -e 'output muted of (get volume settings)')
+    [[ "$muted" == "true" ]] && echo "Volume: ${current}% (muted)" || echo "Volume: ${current}%"
+
+  elif [[ "$1" == "m" ]]; then
+    local muted
+    muted=$(osascript -e 'output muted of (get volume settings)')
+    if [[ "$muted" == "true" ]]; then
+      osascript -e "set volume output muted false"
+      echo "Unmuted"
+    else
+      osascript -e "set volume output muted true"
+      echo "Muted"
+    fi
+
   elif [[ "$1" =~ ^[0-9]+$ ]] && (( $1 >= 0 && $1 <= 100 )); then
-    # Valid number between 0 and 100
-    osascript -e "set volume output volume $1"
-    echo "Volume set to $1%"
+    # Set volume (also unmute)
+    osascript -e "set volume output volume $1" -e "set volume output muted false"
+    echo "Volume: ${1}%"
   else
-    echo "Please provide a number between 0 and 100 (or leave blank to mute)."
-  fi
+    echo -e "Usage: vol [0-100|m]   (no args → show status, m → toggle \033[4mm\033[0mute)"
+fi
 }
 alias vol='volume'
 
