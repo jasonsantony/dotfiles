@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -178,11 +171,17 @@ ulimit -s unlimited
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Redraw window when ghostty is resized
-# TRAPWINCH() {
-#  zle && zle reset-prompt
-# }
-
 # Linux-style dotfiles
+# XDG base directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# Zsh history file (keep it out of $HOME)
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+mkdir -p "$(dirname "$HISTFILE")"
 export XDG_CONFIG_HOME="$HOME/.config"
 
