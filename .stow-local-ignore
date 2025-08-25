@@ -1,0 +1,17 @@
+# Docs
+README
+README.*
+LICENSE
+
+# macOS junk
+.DS_Store
+
+# VCS
+.git
+.gitignore
+.gitattributes
+
+# Stow configs
+.stowrc
+.stow-local-ignore
+

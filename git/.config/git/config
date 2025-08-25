@@ -2,7 +2,7 @@
 	rebase = true
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/ignore
 
 # Not symlinked from ~/dotfiles (not tracked)
 [include]
