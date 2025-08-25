@@ -4,6 +4,6 @@
 [core]
 	excludesfile = ~/.gitignore_global
 
-# Make sure to set this untracked in `~/`
+# Not symlinked from ~/dotfiles (not tracked)
 [include]
 	path = ~/.gitconfig_local
