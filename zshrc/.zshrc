@@ -120,13 +120,18 @@ alias pip=pip3
 # Cursor editor
 alias c='cursor'
 
+# LazyGit
+alias lg='lazygit'
+
+# Taskell
+alias todo='taskell'
+
 # Confirm before doing something bad
 alias cp='cp -i'                          # Confirm before overwriting something
 alias rm='rm -i'
 alias mv='mv -i'
 
 alias q='exit'
-alias lg='lazygit'
 alias grep='grep --color=auto'
 alias dotfiles='cd ~/dotfiles'
 alias root='cd /'
