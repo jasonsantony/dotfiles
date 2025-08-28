@@ -1,4 +1,4 @@
-# Dotfiles symlinked on my machine
+# Dotfiles symlinked on my Mac
 
 ### Install with stow:
 ```zsh
