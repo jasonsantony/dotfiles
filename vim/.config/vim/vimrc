@@ -1,0 +1,59 @@
+" ============================
+" Minimal XDG-aware Vim config
+" ============================
+
+" ----- Encoding -----
+set encoding=utf-8
+set fileencodings=utf-8
+
+" ----- Line numbers -----
+set number
+set relativenumber
+" Toggle relative numbers off in Insert mode (nice for typing)
+augroup numbertoggle
+  autocmd!
+  autocmd InsertEnter * set norelativenumber
+  autocmd InsertLeave * set relativenumber
+augroup END
+
+" ----- Editing defaults -----
+set tabstop=4           " visual width of a <Tab>
+set shiftwidth=4        " spaces used for >> and autoindent
+set expandtab           " insert spaces instead of tabs
+set smartindent         " basic smart indentation
+
+set ignorecase          " case-insensitive search...
+set smartcase           " ...unless the pattern has capitals
+set incsearch           " live incremental search
+set hlsearch            " highlight matches
+
+" Backspace works like you'd expect in insert mode
+set backspace=indent,eol,start
+
+" Keep buffers hidden when abandoned (less nags)
+set hidden
+
+" ----- XDG state (works even if XDG_STATE_HOME isn't set) -----
+let s:state     = exists('$XDG_STATE_HOME') ? $XDG_STATE_HOME : expand('~/.local/state')
+let s:vim_state = s:state . '/vim'
+
+" Create state dirs if missing
+call mkdir(s:vim_state . '/undo',   'p')
+call mkdir(s:vim_state . '/backup', 'p')
+call mkdir(s:vim_state . '/swap',   'p')
+
+" Persist state there
+set undofile
+let &undodir     = s:vim_state . '/undo//'
+let &backupdir   = s:vim_state . '/backup//'
+let &directory   = s:vim_state . '/swap//'
+let &viminfofile = s:vim_state . '/viminfo'
+
+" ----- UI niceties (safe, lightweight) -----
+syntax on
+filetype plugin indent on
+set ruler               " show cursor position
+set laststatus=2        " always show statusline
+set wildmenu            " nicer command-line completion
+set mouse=a             " mouse support (Terminal.app/iTerm2 compatible)
+

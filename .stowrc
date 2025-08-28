@@ -1,0 +1,6 @@
+# Default target is home directory
+Target: ~
+
+# Verbosity level (2 = show each symlink created)
+Verbose: 2
+
