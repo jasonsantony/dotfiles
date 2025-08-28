@@ -60,6 +60,7 @@ alias grep='grep --color=auto'
 alias dotfiles='cd ~/dotfiles'
 alias root='cd /'
 alias neofetch='neofetch --ascii "$HOME/.config/neofetch/nerv.txt" --ascii_distro off'
+alias ytmp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]" -o "%(title)s.%(ext)s" --merge-output-format mp4'
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
@@ -89,6 +90,9 @@ alias vol='volume'
 
 # ---- System tweaks ----
 ulimit -s unlimited 2>/dev/null || true
+
+# ---- FZF shell integration ----
+source <(fzf --zsh)
 
 # ---- Autosuggestions ----
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
