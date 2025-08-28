@@ -37,6 +37,11 @@ set hidden
 let s:state     = exists('$XDG_STATE_HOME') ? $XDG_STATE_HOME : expand('~/.local/state')
 let s:vim_state = s:state . '/vim'
 
+" Redirect netrw's state to XDG
+let s:state = exists('$XDG_STATE_HOME') ? $XDG_STATE_HOME : expand('~/.local/state')
+let g:netrw_home = s:state . '/vim'
+call mkdir(g:netrw_home, 'p')
+
 " Create state dirs if missing
 call mkdir(s:vim_state . '/undo',   'p')
 call mkdir(s:vim_state . '/backup', 'p')
