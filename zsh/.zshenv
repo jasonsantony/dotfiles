@@ -30,10 +30,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less/history"       # ephemeral-ish
 # Rust toolchain (XDG-friendly)
 export CARGO_HOME="${CARGO_HOME:-$XDG_DATA_HOME/cargo}"
 export RUSTUP_HOME="${RUSTUP_HOME:-$XDG_DATA_HOME/rustup}"
-if [[ -r "$CARGO_HOME/env" ]]; then
-  # This sets RUSTUP variables and may add completion helpers
-  . "$CARGO_HOME/env"
-fi
+export PATH="$CARGO_HOME/bin:$PATH"
 
 
 # Git global config path
