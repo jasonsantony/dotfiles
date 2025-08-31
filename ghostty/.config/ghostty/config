@@ -3,11 +3,12 @@ window-height = 36
 theme = "iTerm2 Solarized Light"
 cursor-color = "#dc8a78"
 adjust-cursor-thickness = 2
-background-opacity = 0.8
-background-blur-radius = 20
+# background-opacity = 0.8
+# background-blur-radius = 20
 font-family = "Hack Nerd Font"
 font-size = 14
 mouse-hide-while-typing = true
 macos-titlebar-style = transparent
 macos-titlebar-style = tabs
 macos-option-as-alt = true
+
