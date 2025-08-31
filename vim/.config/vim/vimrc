@@ -69,3 +69,13 @@ let &t_EI = "\<Esc>[2 q"
 " ----- Custom key mapping -----
 inoremap jj <Esc>
 
+
+" ----- Sync vim yank register with clipboard -----
+silent! unmap y
+silent! vunmap y
+nnoremap y  "+y
+nnoremap yy "+yy
+vnoremap y  "+y
+nnoremap p  "+p
+vnoremap p  "+p
+
