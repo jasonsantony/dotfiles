@@ -13,9 +13,6 @@
 # - Good place for system-wide env setup, not per-interactive tweaks.
 # ============================
 
-# PATH for login shells
-export PATH="/opt/homebrew/bin:$PATH"
-
 # terminal editor defaults (vim for quick edits / CLI tools)
 export EDITOR="vim"
 export VISUAL="vim"
@@ -23,3 +20,7 @@ export VISUAL="vim"
 # locale (optional)
 export LANG="en_US.UTF-8"
 
+# Initialize Homebrew (Apple Silicon)
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi

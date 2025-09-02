@@ -17,11 +17,14 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 # Make zsh load the rest of its configs from ~/.config/zsh
 export ZDOTDIR="${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}"
+# Disable macOS Zsh sessions: use XDG STATE
+export SHELL_SESSIONS_DISABLE=1
 
-# Homebrew (Apple Silicon macOS) — official, idempotent
-if [[ -x /opt/homebrew/bin/brew ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+# Ensure parent dirs for tools that won't create them
+mkdir -p -- \
+  "$XDG_STATE_HOME/python" \
+  "$XDG_CACHE_HOME/less" \
+  "$XDG_CONFIG_HOME/git"
 
 # Tool-specific env that should exist for all shells
 export PYTHONHISTFILE="$XDG_STATE_HOME/python/history"   # persistent state
@@ -31,7 +34,6 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less/history"       # ephemeral-ish
 export CARGO_HOME="${CARGO_HOME:-$XDG_DATA_HOME/cargo}"
 export RUSTUP_HOME="${RUSTUP_HOME:-$XDG_DATA_HOME/rustup}"
 export PATH="$CARGO_HOME/bin:$PATH"
-
 
 # Git global config path
 export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
