@@ -13,11 +13,11 @@
 # - Good place for system-wide env setup, not per-interactive tweaks.
 # ============================
 
-# terminal editor defaults (vim for quick edits / CLI tools)
-export EDITOR="vim"
-export VISUAL="vim"
+# Terminal editor defaults
+export EDITOR="nvim"
+export VISUAL="nvim"
 
-# locale (optional)
+# Locale (optional)
 export LANG="en_US.UTF-8"
 
 # Initialize Homebrew (Apple Silicon)

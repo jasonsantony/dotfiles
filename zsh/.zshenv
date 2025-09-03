@@ -38,6 +38,5 @@ export PATH="$CARGO_HOME/bin:$PATH"
 # Git global config path
 export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
 
-# Make VIM XDG-compliant
-export VIMINIT='source $XDG_CONFIG_HOME/vim/vimrc'
-
+# Homebrew clangd
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
