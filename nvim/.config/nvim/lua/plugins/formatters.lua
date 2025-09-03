@@ -3,12 +3,11 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        rust = { "rustfmt" },       -- from Rust toolchain
+        rust = { "rustfmt" }, -- from Rust toolchain
         go = { "gofumpt" },
         python = { "ruff_format" },
         cpp = { "clang_format" },
         c = { "clang_format" },
-        markdown = { "prettier" },
         yaml = { "prettier" },
         json = { "prettier" },
         toml = { "taplo" },
@@ -20,4 +19,3 @@ return {
     },
   },
 }
-
