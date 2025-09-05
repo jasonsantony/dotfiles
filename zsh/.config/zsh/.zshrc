@@ -99,6 +99,7 @@ source <(fzf --zsh)
 # ---- Autosuggestions ----
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
+bindkey -r '^E'
 
 # ---- Syntax highlighting (keep near the end) ----
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
