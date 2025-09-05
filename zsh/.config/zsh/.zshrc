@@ -30,7 +30,7 @@ plugins=(git)
 source "$ZSH/oh-my-zsh.sh"
 
 # Speed: compile compdump when updated
-if [[ -s "$ZSH_COMPDUMP" && ( ! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc" ) ]]; then
+if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
   zcompile "$ZSH_COMPDUMP"
 fi
 
@@ -40,11 +40,11 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 mkdir -p "${HISTFILE:h}"
 
-setopt incappendhistory      # write commands immediately
-setopt sharehistory          # share across sessions
-setopt histignorealldups     # drop older duplicates
-setopt histreduceblanks      # trim extra spaces
-setopt histignorespace       # lines starting with space aren’t saved
+setopt incappendhistory  # write commands immediately
+setopt sharehistory      # share across sessions
+setopt histignorealldups # drop older duplicates
+setopt histreduceblanks  # trim extra spaces
+setopt histignorespace   # lines starting with space aren’t saved
 
 # ---- Aliases / functions ----
 alias python=python3
@@ -75,11 +75,13 @@ volume() {
     local muted
     muted=$(osascript -e 'output muted of (get volume settings)')
     if [[ "$muted" == "true" ]]; then
-      osascript -e "set volume output muted false"; echo "Unmuted"
+      osascript -e "set volume output muted false"
+      echo "Unmuted"
     else
-      osascript -e "set volume output muted true"; echo "Muted"
+      osascript -e "set volume output muted true"
+      echo "Muted"
     fi
-  elif [[ "$1" =~ ^[0-9]+$ ]] && (( $1 >= 0 && $1 <= 100 )); then
+  elif [[ "$1" =~ ^[0-9]+$ ]] && (($1 >= 0 && $1 <= 100)); then
     osascript -e "set volume output volume $1" -e "set volume output muted false"
     echo "Volume: ${1}%"
   else
@@ -96,7 +98,7 @@ source <(fzf --zsh)
 
 # ---- Autosuggestions ----
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^E' autosuggest-accept
+bindkey '^ ' autosuggest-accept
 
 # ---- Syntax highlighting (keep near the end) ----
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
