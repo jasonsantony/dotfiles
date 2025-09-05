@@ -1,7 +1,7 @@
 window-width = 80
 window-height = 36
-theme = "iTerm2 Solarized Light"
-cursor-color = "#dc8a78"
+theme = "solarized-light"
+# cursor-color = "#dc8a78"
 adjust-cursor-thickness = 2
 # background-opacity = 0.75
 # background-blur-radius = 20
