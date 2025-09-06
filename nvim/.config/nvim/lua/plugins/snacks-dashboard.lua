@@ -1,12 +1,3 @@
-local function greeting()
-  local hour = tonumber(vim.fn.strftime("%H"))
-  -- [02:00, 10:00) - morning, [10:00, 18:00) - day, [18:00, 02:00) - evening
-  local part_id = math.floor((hour + 6) / 8) + 1
-  local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
-  local username = os.getenv("USER") or os.getenv("USERNAME") or "user"
-  return ("Good %s, %s"):format(day_part, username)
-end
-
 return {
   "folke/snacks.nvim",
   opts = {
@@ -40,7 +31,7 @@ return {
 ██████  █████████████████████ ████ █████ █████ ████ ██████
 ]],
           "", -- blank line for spacing
-          greeting(), -- <== your function result goes here
+          '"Man fears the darkness, and so he scrapes away at the edges of it with fire"', -- <== your function result goes here
         }, "\n"),
       },
       formats = {
