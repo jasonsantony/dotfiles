@@ -11,6 +11,3 @@ vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true, desc = "U
 -- Normal mode: indent/unindent but keep cursor in place
 vim.keymap.set("n", "<Tab>", ">>_", { noremap = true, silent = true, desc = "Indent line" })
 vim.keymap.set("n", "<S-Tab>", "<<_", { noremap = true, silent = true, desc = "Unindent line" })
-
--- Dashboard command
-vim.api.nvim_create_user_command("Dashboard", "lua Snacks.dashboard()", {})
