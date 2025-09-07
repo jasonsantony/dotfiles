@@ -2,7 +2,7 @@ return {
   "folke/snacks.nvim",
   opts = {
     dashboard = {
-      width = 18,
+      width = 20,
       preset = {
         keys = {
           { icon = "", key = "f", desc = "find file", action = ":lua Snacks.dashboard.pick('files')" },
