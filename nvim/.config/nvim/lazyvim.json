@@ -1,6 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.editor.telescope"
+    "lazyvim.plugins.extras.editor.telescope",
+    "lazyvim.plugins.extras.dap.core"
   ],
   "install_version": 8,
   "news": {
@@ -8,3 +9,4 @@
   },
   "version": 8
 }
+
