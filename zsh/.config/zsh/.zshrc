@@ -47,7 +47,8 @@ setopt histreduceblanks  # trim extra spaces
 setopt histignorespace   # lines starting with space aren’t saved
 
 # ---- Aliases / functions ----
-alias python=python3
+alias vim='nvim' # open vim with vi
+alias python='python3'
 alias pip=pip3
 alias c='cursor'
 alias lg='lazygit'
