@@ -15,8 +15,22 @@ return {
             desc = "config",
             action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
           },
-          { icon = "", key = "s", desc = "session", section = "session" },
-          { icon = "", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+
+          {
+            icon = "",
+            key = "s",
+            desc = "sessions",
+            action = function()
+              require("utils.session-picker").session_picker()
+            end,
+          },
+
+          {
+            icon = "",
+            key = "x",
+            desc = "extras",
+            action = ":LazyExtras",
+          },
           { icon = "", key = "q", desc = "quit", action = ":qa" },
         },
         header = table.concat({
@@ -35,7 +49,7 @@ return {
         }, "\n"),
       },
       formats = {
-        key = { "" },
+        key = { " %s " },
       },
     },
   },
