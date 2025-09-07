@@ -27,10 +27,19 @@ return {
 
           {
             icon = "",
+            key = "l",
+            desc = "lazy",
+            action = ":Lazy",
+            enabled = package.loaded.lazy ~= nil,
+          },
+
+          {
+            icon = "",
             key = "x",
             desc = "extras",
             action = ":LazyExtras",
           },
+
           { icon = "", key = "q", desc = "quit", action = ":qa" },
         },
         header = table.concat({
