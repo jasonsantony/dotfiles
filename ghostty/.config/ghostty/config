@@ -1,5 +1,5 @@
-window-width = 100
-window-height = 40
+window-width = 80
+window-height = 38
 theme = "solarized-light"
 # cursor-color = "#dc8a78"
 adjust-cursor-thickness = 2
