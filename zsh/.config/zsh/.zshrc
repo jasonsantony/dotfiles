@@ -101,6 +101,7 @@ source <(fzf --zsh)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
 bindkey -r '^E'
+bindkey '^E' end-of-line
 
 # ---- Syntax highlighting (keep near the end) ----
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
