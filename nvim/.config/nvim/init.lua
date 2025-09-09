@@ -1,5 +1,5 @@
 -- Enable truecolor in Neovim
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 -- Transparency
 -- vim.cmd([[
