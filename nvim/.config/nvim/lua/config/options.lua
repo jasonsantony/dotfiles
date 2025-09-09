@@ -4,8 +4,8 @@
 
 -- normal mode timeout delay
 vim.o.timeout = true
-vim.o.timeoutlen = 100
+vim.o.timeoutlen = 300
 
 -- insert mode timeout delay
 vim.o.ttimeout = true
-vim.o.ttimeoutlen = 100
+vim.o.ttimeoutlen = 300

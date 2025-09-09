@@ -18,6 +18,8 @@ return {
     local hrules = require("markview.presets").horizontal_rules
 
     require("markview").setup({
+      html = { enable = false },
+
       markdown = {
         headings = headings.glow, -- preset for headings
         tables = tables.rounded, -- preset for tables

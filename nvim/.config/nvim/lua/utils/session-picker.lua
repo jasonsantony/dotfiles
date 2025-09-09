@@ -50,7 +50,6 @@ function M.session_picker()
         sorter = conf.generic_sorter({}),
         previewer = false,
         attach_mappings = function(prompt_bufnr, map)
-          -- Load session
           local function load_session()
             local entry = action_st.get_selected_entry()
             actions.close(prompt_bufnr)
@@ -62,7 +61,21 @@ function M.session_picker()
           map("i", "<CR>", load_session)
           map("n", "<CR>", load_session)
 
-          -- Delete session (refresh picker if more remain)
+          -- ⌥N / ⌥P (Option/Alt) to move selection in insert mode
+          map("i", "<M-n>", function()
+            actions.move_selection_next(prompt_bufnr)
+          end)
+          map("i", "<M-p>", function()
+            actions.move_selection_previous(prompt_bufnr)
+          end)
+          -- (Optional) Some setups prefer <A-…> aliases:
+          map("i", "<A-n>", function()
+            actions.move_selection_next(prompt_bufnr)
+          end)
+          map("i", "<A-p>", function()
+            actions.move_selection_previous(prompt_bufnr)
+          end)
+
           local function delete_session()
             local picker = action_st.get_current_picker(prompt_bufnr)
             local entry = action_st.get_selected_entry()
@@ -70,7 +83,6 @@ function M.session_picker()
               vim.fn.delete(entry.value)
               vim.notify("Deleted session: " .. humanize(entry.value), vim.log.levels.INFO)
 
-              -- Remove from results in-place
               local new_results = {}
               for _, e in ipairs(picker.finder.results) do
                 local val = type(e) == "table" and e.value or e
@@ -93,7 +105,6 @@ function M.session_picker()
                   }),
                   { reset_prompt = true }
                 )
-
                 vim.schedule(function()
                   actions.move_selection_next(prompt_bufnr)
                 end)
