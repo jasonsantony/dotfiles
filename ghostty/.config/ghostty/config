@@ -2,6 +2,7 @@ window-width = 80
 window-height = 38
 theme = "catppuccin-latte"
 # cursor-color = "#dc8a78"
+cursor-invert-fg-bg = true
 adjust-cursor-thickness = 2
 # background-opacity = 0.75
 # background-blur-radius = 20

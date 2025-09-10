@@ -24,7 +24,7 @@ return {
       }
 
       -- choose your default here (one line)
-      local DEFAULT_KEY = "rose_pine_moon"
+      local DEFAULT_KEY = "catppuccin_latte"
       local default = THEMES[DEFAULT_KEY]
 
       -- runtime commands
