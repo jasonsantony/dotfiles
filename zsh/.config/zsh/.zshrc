@@ -47,21 +47,24 @@ setopt histreduceblanks  # trim extra spaces
 setopt histignorespace   # lines starting with space aren’t saved
 
 # ---- Aliases / functions ----
+# Jason's toolbox
 alias vim='nvim' # open vim with vi
 alias python='python3'
-alias pip=pip3
-alias c='cursor'
+alias pip='pip3'
 alias lg='lazygit'
 alias todo='taskell'
+# Dotfile stuff
+alias dot='cd ~/dotfiles'
+alias dotlg='cd ~/dotfiles && lazygit'
+# Better defaults
+alias grep='grep --color=auto'
+alias neofetch='neofetch --ascii "$HOME/.config/neofetch/nerv.txt" --ascii_distro off'
+alias ytmp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]" -o "%(title)s.%(ext)s" --merge-output-format mp4'
+# Safety first
 alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'
-alias q='exit'
-alias grep='grep --color=auto'
-alias dotfiles='cd ~/dotfiles'
-alias root='cd /'
-alias neofetch='neofetch --ascii "$HOME/.config/neofetch/nerv.txt" --ascii_distro off'
-alias ytmp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]" -o "%(title)s.%(ext)s" --merge-output-format mp4'
+# a e s t h e t i c s
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
