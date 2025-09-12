@@ -25,6 +25,19 @@ return {
         tables = tables.rounded, -- preset for tables
         horizontal_rules = hrules.thin, -- preset for horizontal rules
       },
+
+      preview = {
+        raw_previews = {
+          -- Don’t hide Markdown symbols inside tables
+          markdown = { "tables" },
+
+          markdown_inline = {},
+          html = {},
+          latex = {},
+          typst = {},
+          yaml = {},
+        },
+      },
     })
   end,
 }

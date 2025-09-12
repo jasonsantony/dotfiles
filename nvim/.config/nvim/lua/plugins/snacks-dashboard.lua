@@ -54,7 +54,8 @@ return {
   ██████  █████████████████████ ████ █████ █████ ████ ██████ btw 
 ]],
           "", -- blank line for spacing
-          '"Man fears the darkness, and so he scrapes away at the edges of it with fire"', -- <== your function result goes here
+          '"Man fears the darkness, and so he scrapes away at the edges of it with fire"',
+          "「人は闇を恐れ、火を使い、闇を削って生きてきたわ」",
         }, "\n"),
       },
       formats = {

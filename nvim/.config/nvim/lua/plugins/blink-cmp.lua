@@ -26,10 +26,9 @@ return {
       ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
 
       ["<Tab>"] = { "accept", "snippet_forward", "fallback" },
-      ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
-      -- Unbind Enter from the preset
-      ["<CR>"] = false, -- `{}` also works to disable a preset mapping. :contentReference[oaicite:2]{index=2}
+      ["<CR>"] = false, -- unbind Enter from selecting
+      ["<S-Tab>"] = false, -- unbind Shift-Tab from selecting previous
     },
   },
 }
