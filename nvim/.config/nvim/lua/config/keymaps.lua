@@ -2,9 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- Scary command that I am banishing
-vim.keymap.set("n", "ZQ", "<nop>")
-
 -- Unindent in insert mode with Shift-Tab
 vim.keymap.set("i", "<S-Tab>", "<C-d>", { noremap = true, silent = true, desc = "Unindent" })
 

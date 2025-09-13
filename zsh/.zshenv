@@ -27,8 +27,8 @@ mkdir -p -- \
   "$XDG_CONFIG_HOME/git"
 
 # Tool-specific env that should exist for all shells
-export PYTHONHISTFILE="$XDG_STATE_HOME/python/history"   # persistent state
-export LESSHISTFILE="$XDG_CACHE_HOME/less/history"       # ephemeral-ish
+export PYTHONHISTFILE="$XDG_STATE_HOME/python/history" # persistent state
+export LESSHISTFILE="$XDG_CACHE_HOME/less/history"     # ephemeral-ish
 
 # Rust toolchain (XDG-friendly)
 export CARGO_HOME="${CARGO_HOME:-$XDG_DATA_HOME/cargo}"
