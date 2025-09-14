@@ -20,23 +20,44 @@ export ZDOTDIR="${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}"
 # Disable macOS Zsh sessions: use XDG STATE
 export SHELL_SESSIONS_DISABLE=1
 
-# Ensure parent dirs for tools that won't create them
-mkdir -p -- \
-  "$XDG_STATE_HOME/python" \
-  "$XDG_CACHE_HOME/less" \
-  "$XDG_CONFIG_HOME/git"
+# Git global config path
+export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
 
 # Tool-specific env that should exist for all shells
 export PYTHONHISTFILE="$XDG_STATE_HOME/python/history" # persistent state
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"     # ephemeral-ish
+
+# Homebrew clangd
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # Rust toolchain (XDG-friendly)
 export CARGO_HOME="${CARGO_HOME:-$XDG_DATA_HOME/cargo}"
 export RUSTUP_HOME="${RUSTUP_HOME:-$XDG_DATA_HOME/rustup}"
 export PATH="$CARGO_HOME/bin:$PATH"
 
-# Git global config path
-export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
+# Node / npm (not XDG by default)
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_PREFIX="$XDG_DATA_HOME/npm"
+export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
 
-# Homebrew clangd
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# IPython (falls back to ~/.ipython if unset)
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+
+# Jupyter (also falls back to ~/.jupyter if unset)
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
+export JUPYTER_DATA_DIR="$XDG_DATA_HOME/jupyter"
+export JUPYTER_RUNTIME_DIR="$XDG_STATE_HOME/jupyter/runtime"
+
+# Ensure parent dirs for tools that won't create them
+mkdir -p -- \
+  "$XDG_STATE_HOME/python" \
+  "$XDG_CACHE_HOME/less" \
+  "$XDG_CONFIG_HOME/git" \
+  "$XDG_CONFIG_HOME/npm" \
+  "$XDG_CACHE_HOME/npm" \
+  "$XDG_DATA_HOME/npm" \
+  "$XDG_CONFIG_HOME/ipython" \
+  "$XDG_CONFIG_HOME/jupyter" \
+  "$XDG_DATA_HOME/jupyter" \
+  "$JUPYTER_RUNTIME_DIR"
