@@ -30,9 +30,6 @@ export ZSH_CACHE_DIR="$XDG_CACHE_HOME/oh-my-zsh"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
 
 # History files
-export HISTFILE="$XDG_STATE_HOME/zsh/history"
-export HISTSIZE=10000
-export SAVEHIST=10000
 export PYTHONHISTFILE="$XDG_STATE_HOME/python/history" # persistent state
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"     # ephemeral-ish
 
@@ -73,7 +70,6 @@ mkdir -p -- \
   "$ZSH_CACHE_DIR" \
   "${ZSH_COMPDUMP:h}" \
   "$XDG_CACHE_HOME/zsh" \
-  "${HISTFILE:h}" \
   "$XDG_STATE_HOME/python" \
   "$XDG_CACHE_HOME/less" \
   "$GOPATH" \

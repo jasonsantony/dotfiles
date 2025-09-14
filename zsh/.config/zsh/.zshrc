@@ -13,11 +13,15 @@
 # ============================
 
 # ---- History options (interactive only) ----
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
+export HISTSIZE=10000
+export SAVEHIST=10000
 setopt incappendhistory  # write commands immediately
 setopt sharehistory      # share across sessions
 setopt histignorealldups # drop older duplicates
 setopt histreduceblanks  # trim extra spaces
 setopt histignorespace   # lines starting with space aren’t saved
+mkdir -p -- "${HISTFILE:h}"
 
 # ---- Aliases ----
 # Jason's toolbox
