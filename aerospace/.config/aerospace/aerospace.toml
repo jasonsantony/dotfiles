@@ -183,6 +183,7 @@ alt-f = 'exec-and-forget open -a Firefox'
 alt-s = 'exec-and-forget open -a Spotify'
 alt-d = 'exec-and-forget open -a Discord'
 alt-m = 'exec-and-forget open -a Messages'
+alt-x = 'exec-and-forget open -a System\ Settings'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
