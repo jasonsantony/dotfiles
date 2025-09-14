@@ -19,7 +19,7 @@ setopt histignorealldups # drop older duplicates
 setopt histreduceblanks  # trim extra spaces
 setopt histignorespace   # lines starting with space aren’t saved
 
-# ---- Aliases / functions ----
+# ---- Aliases ----
 # Jason's toolbox
 alias vim='nvim' # open vim with vi
 alias python='python3'
@@ -39,32 +39,6 @@ alias mv='mv -i'
 # a e s t h e t i c s
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-# Volume helper
-volume() {
-  if [[ -z "$1" ]]; then
-    local current muted
-    current=$(osascript -e 'output volume of (get volume settings)')
-    muted=$(osascript -e 'output muted of (get volume settings)')
-    [[ "$muted" == "true" ]] && echo "Volume: ${current}% (muted)" || echo "Volume: ${current}%"
-  elif [[ "$1" == "m" ]]; then
-    local muted
-    muted=$(osascript -e 'output muted of (get volume settings)')
-    if [[ "$muted" == "true" ]]; then
-      osascript -e "set volume output muted false"
-      echo "Unmuted"
-    else
-      osascript -e "set volume output muted true"
-      echo "Muted"
-    fi
-  elif [[ "$1" =~ ^[0-9]+$ ]] && (($1 >= 0 && $1 <= 100)); then
-    osascript -e "set volume output volume $1" -e "set volume output muted false"
-    echo "Volume: ${1}%"
-  else
-    echo "Usage: vol [0-100|m]   (no args → show status, m → toggle mute)"
-  fi
-}
-alias vol='volume'
 
 # ---- System tweaks ----
 ulimit -s unlimited 2>/dev/null || true
@@ -112,3 +86,47 @@ fi
 if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
   zcompile "$ZSH_COMPDUMP"
 fi
+
+# ---- Functions ----
+# Aerospace window fzf
+ff() {
+  # Check dependencies
+  if ! command -v aerospace >/dev/null 2>&1; then
+    echo "Error: 'aerospace' not found in PATH." >&2
+    return 1
+  fi
+
+  if ! command -v fzf >/dev/null 2>&1; then
+    echo "Error: 'fzf' not found in PATH." >&2
+    return 1
+  fi
+
+  aerospace list-windows --all |
+    fzf --bind 'enter:execute(zsh -c "aerospace focus --window-id {1}")+abort'
+}
+
+# Volume helper
+volume() {
+  if [[ -z "$1" ]]; then
+    local current muted
+    current=$(osascript -e 'output volume of (get volume settings)')
+    muted=$(osascript -e 'output muted of (get volume settings)')
+    [[ "$muted" == "true" ]] && echo "Volume: ${current}% (muted)" || echo "Volume: ${current}%"
+  elif [[ "$1" == "m" ]]; then
+    local muted
+    muted=$(osascript -e 'output muted of (get volume settings)')
+    if [[ "$muted" == "true" ]]; then
+      osascript -e "set volume output muted false"
+      echo "Unmuted"
+    else
+      osascript -e "set volume output muted true"
+      echo "Muted"
+    fi
+  elif [[ "$1" =~ ^[0-9]+$ ]] && (($1 >= 0 && $1 <= 100)); then
+    osascript -e "set volume output volume $1" -e "set volume output muted false"
+    echo "Volume: ${1}%"
+  else
+    echo "Usage: vol [0-100|m]   (no args → show status, m → toggle mute)"
+  fi
+}
+alias vol='volume'
