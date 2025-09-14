@@ -4,6 +4,7 @@
 [core]
 	excludesfile = ~/.config/git/ignore
 
-# Not symlinked from ~/dotfiles (not tracked)
+# Not tracked
 [include]
-	path = ~/.gitconfig_local
+    path = ~/.config/git/config.local
+
