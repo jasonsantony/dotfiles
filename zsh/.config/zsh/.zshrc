@@ -12,34 +12,7 @@
 # - Do NOT put global env vars here; those belong in ~/.zshenv or ~/.zprofile.
 # ============================
 
-# ---- Oh My Zsh ----
-export ZSH="$HOME/.oh-my-zsh"
-
-# Use XDG cache for OMZ + completion
-export ZSH_CACHE_DIR="$XDG_CACHE_HOME/oh-my-zsh"
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
-
-# Ensure caches exist
-mkdir -p "$ZSH_CACHE_DIR" "${ZSH_COMPDUMP:h}" "$XDG_CACHE_HOME/zsh"
-
-# Theme + plugins
-ZSH_THEME="robbyrussell"
-plugins=(git)
-
-# Load OMZ (runs compinit using $ZSH_COMPDUMP)
-source "$ZSH/oh-my-zsh.sh"
-
-# Speed: compile compdump when updated
-if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
-  zcompile "$ZSH_COMPDUMP"
-fi
-
-# ---- History (interactive only) ----
-export HISTFILE="$XDG_STATE_HOME/zsh/history"
-export HISTSIZE=10000
-export SAVEHIST=10000
-mkdir -p "${HISTFILE:h}"
-
+# ---- History options (interactive only) ----
 setopt incappendhistory  # write commands immediately
 setopt sharehistory      # share across sessions
 setopt histignorealldups # drop older duplicates
@@ -97,13 +70,45 @@ alias vol='volume'
 ulimit -s unlimited 2>/dev/null || true
 
 # ---- FZF shell integration ----
-source <(fzf --zsh)
+command -v fzf >/dev/null && source <(fzf --zsh)
 
-# ---- Autosuggestions ----
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^ ' autosuggest-accept
-bindkey -r '^E'
-bindkey '^E' end-of-line
+# ---- Oh My Zsh ----
+plugins=(git)
+# These plugins must be cloned into $ZSH/custom/plugins/:
+#
+#   git clone https://github.com/zsh-users/zsh-autosuggestions \
+#       $ZSH/custom/plugins/zsh-autosuggestions
+#
+#   git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+#       $ZSH/custom/plugins/zsh-syntax-highlighting
+#
+# To update all custom plugins in $ZSH/custom/plugins at once:
+#
+#   for d in $ZSH/custom/plugins/*/.git; do
+#     (cd "${d:h}" && git pull --ff-only)
+#   done
+#
+# Add plugins if their dirs exist
+[[ -d "$ZSH/custom/plugins/zsh-autosuggestions" ]] &&
+  plugins+=(zsh-autosuggestions)
 
-# ---- Syntax highlighting (keep near the end) ----
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -d "$ZSH/custom/plugins/zsh-syntax-highlighting" ]] &&
+  plugins+=(zsh-syntax-highlighting)
+
+ZSH_THEME="robbyrussell"
+
+# Load OMZ (runs compinit using $ZSH_COMPDUMP)
+source "$ZSH/oh-my-zsh.sh"
+
+if zle -la | grep -q autosuggest-accept; then
+  bindkey '^ ' autosuggest-accept
+  bindkey -r '^E'
+  bindkey '^E' end-of-line
+fi
+
+# Speed: compile compdump when updated
+# Turns the plain text dump into a faster binary .zwc file
+# Only recompiles if the dump is newer than the binary
+if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
+  zcompile "$ZSH_COMPDUMP"
+fi
