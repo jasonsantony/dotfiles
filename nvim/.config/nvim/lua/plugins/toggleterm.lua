@@ -3,10 +3,10 @@ return {
     "akinsho/toggleterm.nvim",
     cmd = "ToggleTerm",
     keys = {
-      { "<M-1>", "<cmd>ToggleTerm<cr>", desc = "Toggle floating terminal" },
+      { "<C-1>", "<cmd>ToggleTerm<cr>", desc = "Toggle floating terminal" },
     },
     opts = {
-      open_mapping = [[<M-1>]],
+      open_mapping = [[<C-1>]],
       direction = "float",
       shade_filetypes = {},
       hide_numbers = true,

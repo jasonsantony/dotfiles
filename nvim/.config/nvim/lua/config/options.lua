@@ -3,13 +3,17 @@
 -- Add any additional options here
 
 -- normal mode timeout delay
-vim.o.timeout = true
-vim.o.timeoutlen = 300
+vim.opt.timeout = true
+vim.opt.timeoutlen = 200
 
 -- insert mode timeout delay
-vim.o.ttimeout = true
-vim.o.ttimeoutlen = 300
+vim.opt.ttimeout = true
+vim.opt.ttimeoutlen = 200
 
+-- Enable truecolor in Neovim
+vim.opt.termguicolors = true
+
+-- Cursor settings
 vim.opt.guicursor = table.concat({
   "a:blinkon0", -- default: no blinking
   "n-v-c-sm:block", -- block in normal/visual/command
