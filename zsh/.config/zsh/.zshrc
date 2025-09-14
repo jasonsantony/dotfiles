@@ -52,7 +52,6 @@ alias vim='nvim' # open vim with vi
 alias python='python3'
 alias pip='pip3'
 alias lg='lazygit'
-alias todo='taskell'
 # Dotfile stuff
 alias dot='cd ~/dotfiles'
 alias dotlg='cd ~/dotfiles && lazygit'
