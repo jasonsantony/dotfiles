@@ -56,9 +56,7 @@ run = 'layout floating'
 if.app-name-regex-substring = 'safari'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'firefox'
-run = 'layout floating'
+# Using non-native fullscreen in firefox so it can be tiled
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'camera'
