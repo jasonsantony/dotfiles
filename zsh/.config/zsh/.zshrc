@@ -12,7 +12,38 @@
 # - Do NOT put global env vars here; those belong in ~/.zshenv or ~/.zprofile.
 # ============================
 
+# Ensure parent dirs for tools that won't create them
+# Tentatively: Git, Oh My Zsh, Python, Less, Go, npm, IPython, Jupyter
+# Rust toolchain is self-managing, no mkdir
+mkdir -p -- \
+  "$XDG_CONFIG_HOME/git" \
+  "$XDG_CACHE_HOME/zsh" \
+  "$XDG_CONFIG_HOME/starship" \
+  "$XDG_STATE_HOME/python" \
+  "$XDG_CACHE_HOME/less" \
+  "$GOPATH" \
+  "$GOPATH/bin" \
+  "$XDG_CONFIG_HOME/npm" \
+  "$XDG_CACHE_HOME/npm" \
+  "$XDG_DATA_HOME/npm" \
+  "$XDG_CONFIG_HOME/ipython" \
+  "$XDG_CONFIG_HOME/jupyter" \
+  "$XDG_DATA_HOME/jupyter" \
+  "$JUPYTER_RUNTIME_DIR"
+
+# ---- Autocomplete ----
+autoload -Uz compinit
+compinit -u -C -d "$ZSH_COMPDUMP"
+autoload -Uz bashcompinit
+bashcompinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+### --- Prompt ---
+setopt prompt_subst
+
 # ---- History options (interactive only) ----
+bindkey '^P' up-history
+bindkey '^N' down-history
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export HISTSIZE=10000
 export SAVEHIST=10000
@@ -25,7 +56,7 @@ mkdir -p -- "${HISTFILE:h}"
 
 # ---- Aliases ----
 # Jason's toolbox
-alias l='ls -lah --color=auto'
+alias l='gls -lah --color=auto'
 alias vim='nvim' # open vim with vi
 alias python='python3'
 alias pip='pip3'
@@ -48,55 +79,19 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # ---- System tweaks ----
 ulimit -s unlimited 2>/dev/null || true
 
-# ---- FZF shell integration ----
-command -v fzf >/dev/null && source <(fzf --zsh)
+# ---- FZF ----
+# Shell integration
+source <(fzf --zsh)
 
-# ---- Functions ----
 # Aerospace window fzf
 ff() {
-  # Check dependencies
-  if ! command -v aerospace >/dev/null 2>&1; then
-    echo "Error: 'aerospace' not found in PATH." >&2
-    return 1
-  fi
-
-  if ! command -v fzf >/dev/null 2>&1; then
-    echo "Error: 'fzf' not found in PATH." >&2
-    return 1
-  fi
-
   aerospace list-windows --all |
     fzf --bind 'enter:execute(zsh -c "aerospace focus --window-id {1}")+abort'
 }
 
-# Volume helper
-volume() {
-  if [[ -z "$1" ]]; then
-    local current muted
-    current=$(osascript -e 'output volume of (get volume settings)')
-    muted=$(osascript -e 'output muted of (get volume settings)')
-    [[ "$muted" == "true" ]] && echo "Volume: ${current}% (muted)" || echo "Volume: ${current}%"
-  elif [[ "$1" == "m" ]]; then
-    local muted
-    muted=$(osascript -e 'output muted of (get volume settings)')
-    if [[ "$muted" == "true" ]]; then
-      osascript -e "set volume output muted false"
-      echo "Unmuted"
-    else
-      osascript -e "set volume output muted true"
-      echo "Muted"
-    fi
-  elif [[ "$1" =~ ^[0-9]+$ ]] && (($1 >= 0 && $1 <= 100)); then
-    osascript -e "set volume output volume $1" -e "set volume output muted false"
-    echo "Volume: ${1}%"
-  else
-    echo "Usage: vol [0-100|m]   (no args → show status, m → toggle mute)"
-  fi
-}
-alias vol='volume'
-
 # ---- Starship ----
 eval "$(starship init zsh)"
+
 # Vi mode
 bindkey -v
 # Insert mode bindings (like a normal editor)
@@ -108,16 +103,14 @@ bindkey -M vicmd '^[[3~' delete-char # ⌦ works like 'x'
 # Map "jk" in insert mode to Escape
 bindkey -M viins 'jk' vi-cmd-mode
 
-# ---- Homebrew zsh plugins ----
-# Autosuggestions
-if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  bindkey '^ ' autosuggest-accept
-  bindkey -r '^E'
-  bindkey '^E' end-of-line
-fi
-
 # Syntax highlighting (keep near bottom)
-if [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^ ' autosuggest-accept
+bindkey -r '^E'
+bindkey '^E' end-of-line
+
+# Autopair
+source $(brew --prefix)/share/zsh-autopair/autopair.zsh

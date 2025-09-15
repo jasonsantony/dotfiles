@@ -15,6 +15,8 @@ export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
+# /---- Intermediate dirs created/confirmed in .zshrc ----/
+
 # Git global config path
 export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
 
@@ -22,6 +24,9 @@ export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
 export ZDOTDIR="${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}"
 # Disable macOS Zsh sessions: use XDG STATE
 export SHELL_SESSIONS_DISABLE=1
+
+# Build path for zsh compdump
+export ZSH_COMPDUMP="${ZSH_COMPDUMP:-$XDG_CACHE_HOME/zsh/zcompdump}"
 
 # Starship config
 export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$XDG_CONFIG_HOME/starship/starship.toml}"
@@ -36,7 +41,6 @@ if command -v brew >/dev/null 2>&1; then
 fi
 
 # Rust toolchain (XDG-friendly)
-# No mkdir needed; self-managing
 export CARGO_HOME="${CARGO_HOME:-$XDG_DATA_HOME/cargo}"
 export RUSTUP_HOME="${RUSTUP_HOME:-$XDG_DATA_HOME/rustup}"
 export PATH="$CARGO_HOME/bin:$PATH"
