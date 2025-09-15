@@ -25,6 +25,7 @@ mkdir -p -- "${HISTFILE:h}"
 
 # ---- Aliases ----
 # Jason's toolbox
+alias l='ls -lah --color=auto'
 alias vim='nvim' # open vim with vi
 alias python='python3'
 alias pip='pip3'
@@ -49,47 +50,6 @@ ulimit -s unlimited 2>/dev/null || true
 
 # ---- FZF shell integration ----
 command -v fzf >/dev/null && source <(fzf --zsh)
-
-# ---- Oh My Zsh ----
-plugins=(git)
-# These plugins must be cloned into $ZSH/custom/plugins/:
-#
-#   git clone https://github.com/zsh-users/zsh-autosuggestions \
-#       $ZSH/custom/plugins/zsh-autosuggestions
-#
-#   git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-#       $ZSH/custom/plugins/zsh-syntax-highlighting
-#
-# To update all custom plugins in $ZSH/custom/plugins at once:
-#
-#   for d in $ZSH/custom/plugins/*/.git; do
-#     (cd "${d:h}" && git pull --ff-only)
-#   done
-#
-# Add plugins if their dirs exist
-[[ -d "$ZSH/custom/plugins/zsh-autosuggestions" ]] &&
-  plugins+=(zsh-autosuggestions)
-
-[[ -d "$ZSH/custom/plugins/zsh-syntax-highlighting" ]] &&
-  plugins+=(zsh-syntax-highlighting)
-
-ZSH_THEME="robbyrussell"
-
-# Load OMZ (runs compinit using $ZSH_COMPDUMP)
-source "$ZSH/oh-my-zsh.sh"
-
-if zle -la | grep -q autosuggest-accept; then
-  bindkey '^ ' autosuggest-accept
-  bindkey -r '^E'
-  bindkey '^E' end-of-line
-fi
-
-# Speed: compile compdump when updated
-# Turns the plain text dump into a faster binary .zwc file
-# Only recompiles if the dump is newer than the binary
-if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
-  zcompile "$ZSH_COMPDUMP"
-fi
 
 # ---- Functions ----
 # Aerospace window fzf
@@ -134,3 +94,30 @@ volume() {
   fi
 }
 alias vol='volume'
+
+# ---- Starship ----
+eval "$(starship init zsh)"
+# Vi mode
+bindkey -v
+# Insert mode bindings (like a normal editor)
+bindkey -M viins '^H' backward-delete-char # ⌫ backspace
+bindkey -M viins '^?' backward-delete-char # ⌫ backspace alt encoding
+bindkey -M viins '^[[3~' delete-char       # ⌦ forward delete
+# Normal mode bindings (vim-like)
+bindkey -M vicmd '^[[3~' delete-char # ⌦ works like 'x'
+# Map "jk" in insert mode to Escape
+bindkey -M viins 'jk' vi-cmd-mode
+
+# ---- Homebrew zsh plugins ----
+# Autosuggestions
+if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  bindkey '^ ' autosuggest-accept
+  bindkey -r '^E'
+  bindkey '^E' end-of-line
+fi
+
+# Syntax highlighting (keep near bottom)
+if [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi

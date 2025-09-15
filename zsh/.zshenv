@@ -23,11 +23,8 @@ export ZDOTDIR="${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}"
 # Disable macOS Zsh sessions: use XDG STATE
 export SHELL_SESSIONS_DISABLE=1
 
-# Oh My Zsh location (XDG-friendly)
-export ZSH="$XDG_DATA_HOME/oh-my-zsh"
-# Use XDG cache for OMZ + completion
-export ZSH_CACHE_DIR="$XDG_CACHE_HOME/oh-my-zsh"
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
+# Starship config
+export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$XDG_CONFIG_HOME/starship/starship.toml}"
 
 # History files
 export PYTHONHISTFILE="$XDG_STATE_HOME/python/history" # persistent state
@@ -66,10 +63,8 @@ export JUPYTER_RUNTIME_DIR="$XDG_STATE_HOME/jupyter/runtime"
 # Tentatively: Git, Oh My Zsh, Python, Less, Go, npm, IPython, Jupyter
 mkdir -p -- \
   "$XDG_CONFIG_HOME/git" \
-  "$ZSH" \
-  "$ZSH_CACHE_DIR" \
-  "${ZSH_COMPDUMP:h}" \
   "$XDG_CACHE_HOME/zsh" \
+  "$XDG_CONFIG_HOME/starship" \
   "$XDG_STATE_HOME/python" \
   "$XDG_CACHE_HOME/less" \
   "$GOPATH" \
