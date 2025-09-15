@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 add_newline = false
 palette = "catppuccin_latte"
-format = """\u2009\u2009$directory$git_branch$character"""
+format = """$directory$git_branch$character"""
 
 [character]
 # Note the use of Catppuccin color 'peach'
