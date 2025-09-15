@@ -94,7 +94,7 @@ preset = 'qwerty'
 inner.horizontal = 6
 inner.vertical = 6
 outer.left = 5
-outer.bottom = 5
+outer.bottom = 4
 outer.top = 3
 outer.right = 5
 
