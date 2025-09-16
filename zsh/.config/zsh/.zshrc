@@ -34,8 +34,6 @@ mkdir -p -- \
 ZSH_THEME=""
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-bindkey '^P' up-line-or-search
-bindkey '^N' down-line-or-search
 
 ### --- Prompt ---
 setopt prompt_subst
@@ -113,3 +111,7 @@ bindkey '^E' end-of-line
 
 # Autopair
 source $(brew --prefix)/share/zsh-autopair/autopair.zsh
+
+# History navigation
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
