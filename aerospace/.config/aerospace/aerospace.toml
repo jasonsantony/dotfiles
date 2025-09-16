@@ -1,6 +1,6 @@
 after-startup-command = ['exec-and-forget sketchybar']
 
-# Notify Sketchybar about workspace change
+# Add jankyborders when it gets fixed
 exec-on-workspace-change = ['/bin/bash', '-c']
 
 # Start AeroSpace at login
