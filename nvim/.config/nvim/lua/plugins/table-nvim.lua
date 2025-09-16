@@ -1,12 +1,12 @@
 return {
-  {
-    "SCJangra/table-nvim",
-    ft = { "markdown" },
-    opts = {
-      mappings = {
-        next = "<C-n>",
-        prev = "<C-p>",
-      },
+    {
+        "SCJangra/table-nvim",
+        ft = { "markdown" },
+        opts = {
+            mappings = {
+                next = "<C-n>",
+                prev = "<C-p>",
+            },
+        },
     },
-  },
 }
