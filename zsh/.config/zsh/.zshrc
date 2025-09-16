@@ -31,12 +31,11 @@ mkdir -p -- \
   "$XDG_DATA_HOME/jupyter" \
   "$JUPYTER_RUNTIME_DIR"
 
-# ---- Autocomplete ----
-autoload -Uz compinit
-compinit -u -C -d "$ZSH_COMPDUMP"
-autoload -Uz bashcompinit
-bashcompinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+ZSH_THEME=""
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
 
 ### --- Prompt ---
 setopt prompt_subst

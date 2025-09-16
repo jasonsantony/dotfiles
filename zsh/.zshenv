@@ -28,6 +28,9 @@ export SHELL_SESSIONS_DISABLE=1
 # Build path for zsh compdump
 export ZSH_COMPDUMP="${ZSH_COMPDUMP:-$XDG_CACHE_HOME/zsh/zcompdump}"
 
+# Oh My Zsh
+export ZSH="$ZDOTDIR/ohmyzsh"
+
 # Starship config
 export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$XDG_CONFIG_HOME/starship/starship.toml}"
 
