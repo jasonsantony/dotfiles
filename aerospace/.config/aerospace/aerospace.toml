@@ -1,7 +1,11 @@
 after-startup-command = ['exec-and-forget sketchybar']
 
 # Add jankyborders when it gets fixed
-exec-on-workspace-change = ['/bin/bash', '-c']
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4 order=above",
+]
 
 # Start AeroSpace at login
 start-at-login = false
@@ -91,12 +95,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 6
-inner.vertical = 6
-outer.left = 5
-outer.bottom = 4
-outer.top = 3
-outer.right = 5
+inner.horizontal = 12
+inner.vertical = 12
+outer.left = 11
+outer.bottom = 10
+outer.top = 9
+outer.right = 11
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -128,8 +132,8 @@ outer.right = 5
 # end tell'
 # '''
 
-alt-shift-f = 'fullscreen --no-outer-gaps'
-alt-shift-tab = 'layout floating tiling'
+alt-f = 'fullscreen --no-outer-gaps'
+alt-shift-f = 'layout floating tiling'
 
 alt-shift-left = 'join-with left'
 alt-shift-down = 'join-with down'

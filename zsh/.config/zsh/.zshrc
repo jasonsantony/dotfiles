@@ -16,20 +16,20 @@
 # Tentatively: Git, Oh My Zsh, Python, Less, Go, npm, IPython, Jupyter
 # Rust toolchain is self-managing, no mkdir
 mkdir -p -- \
-  "$XDG_CONFIG_HOME/git" \
-  "$XDG_CACHE_HOME/zsh" \
-  "$XDG_CONFIG_HOME/starship" \
-  "$XDG_STATE_HOME/python" \
-  "$XDG_CACHE_HOME/less" \
-  "$GOPATH" \
-  "$GOPATH/bin" \
-  "$XDG_CONFIG_HOME/npm" \
-  "$XDG_CACHE_HOME/npm" \
-  "$XDG_DATA_HOME/npm" \
-  "$XDG_CONFIG_HOME/ipython" \
-  "$XDG_CONFIG_HOME/jupyter" \
-  "$XDG_DATA_HOME/jupyter" \
-  "$JUPYTER_RUNTIME_DIR"
+    "$XDG_CONFIG_HOME/git" \
+    "$XDG_CACHE_HOME/zsh" \
+    "$XDG_CONFIG_HOME/starship" \
+    "$XDG_STATE_HOME/python" \
+    "$XDG_CACHE_HOME/less" \
+    "$GOPATH" \
+    "$GOPATH/bin" \
+    "$XDG_CONFIG_HOME/npm" \
+    "$XDG_CACHE_HOME/npm" \
+    "$XDG_DATA_HOME/npm" \
+    "$XDG_CONFIG_HOME/ipython" \
+    "$XDG_CONFIG_HOME/jupyter" \
+    "$XDG_DATA_HOME/jupyter" \
+    "$JUPYTER_RUNTIME_DIR"
 
 ZSH_THEME=""
 plugins=(git)
@@ -39,8 +39,10 @@ source $ZSH/oh-my-zsh.sh
 setopt prompt_subst
 
 # ---- History options (interactive only) ----
-bindkey '^P' up-history
-bindkey '^N' down-history
+bindkey -M viins '^P' up-history
+bindkey -M viins '^N' down-history
+bindkey -M vicmd '^P' up-history
+bindkey -M vicmd '^N' down-history
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export HISTSIZE=10000
 export SAVEHIST=10000
@@ -82,8 +84,8 @@ source <(fzf --zsh)
 
 # Aerospace window fzf
 ff() {
-  aerospace list-windows --all |
-    fzf --bind 'enter:execute(zsh -c "aerospace focus --window-id {1}")+abort'
+    aerospace list-windows --all |
+        fzf --bind 'enter:execute(zsh -c "aerospace focus --window-id {1}")+abort'
 }
 
 # ---- Starship ----
