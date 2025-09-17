@@ -1,10 +1,13 @@
 after-startup-command = ['exec-and-forget sketchybar']
 
-# Add jankyborders when it gets fixed
+# JankyBorders
 exec-on-workspace-change = [
   '/bin/bash',
   '-c',
   "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4 order=above",
+]
+on-focus-changed = [
+  'exec-and-forget /bin/bash -c "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4 order=above"',
 ]
 
 # Start AeroSpace at login
