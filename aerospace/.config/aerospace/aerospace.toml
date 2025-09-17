@@ -149,6 +149,8 @@ alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
+alt-w = 'exec-and-forget ~/.config/aerospace/scripts/cycle-workspace-windows.sh'
+alt-shift-w = 'exec-and-forget ~/.config/aerospace/scripts/cycle-workspace-windows.sh prev'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
