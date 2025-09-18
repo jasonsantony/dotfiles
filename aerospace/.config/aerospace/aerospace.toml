@@ -1,17 +1,17 @@
 after-startup-command = ['exec-and-forget sketchybar']
 
 # JankyBorders
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4 order=above",
-]
-on-focus-changed = [
-  'exec-and-forget /bin/bash -c "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4 order=above"',
-]
+# exec-on-workspace-change = [
+#   '/bin/bash',
+#   '-c',
+#   "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4",
+# ]
+# on-focus-changed = [
+# 'exec-and-forget /bin/bash -c "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4 order=above"',
+# ]
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -172,7 +172,7 @@ alt-3 = 'workspace L3'
 alt-4 = 'workspace L4'
 alt-9 = 'workspace R1'
 alt-0 = 'workspace R2'
-alt-z = 'workspace zen'
+alt-c = 'workspace calm'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace L1 --focus-follows-window'
@@ -189,7 +189,7 @@ alt-shift-m = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
 
-alt-b = 'exec-and-forget open -a Brave\ Browser'
+alt-z = 'exec-and-forget open -a Zen'
 alt-d = 'exec-and-forget open -a Discord'
 alt-s = 'exec-and-forget open -a Spotify'
 alt-m = 'exec-and-forget open -a Messages'
