@@ -117,3 +117,15 @@ source $(brew --prefix)/share/zsh-autopair/autopair.zsh
 # History navigation
 bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
+
+# ---- Annoying miscellaneous keybinds ----
+# Create a no-op widget
+zle -N noop
+noop() { : }
+
+# Bind Option-Q / Option-P to it in all maps
+bindkey -M viins '^[q' noop
+bindkey -M viins '^[p' noop
+bindkey -M vicmd '^[q' noop
+bindkey -M vicmd '^[p' noop
+
