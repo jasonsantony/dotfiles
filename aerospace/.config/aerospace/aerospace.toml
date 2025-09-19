@@ -10,6 +10,11 @@ after-startup-command = ['exec-and-forget sketchybar']
 # 'exec-and-forget /bin/bash -c "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4 order=above"',
 # ]
 
+# HazeOver hook
+on-focus-changed = [
+  'exec-and-forget /usr/bin/osascript -e "tell application \"HazeOver\" to updateDimming"',
+]
+
 # Start AeroSpace at login
 start-at-login = true
 
