@@ -16,3 +16,5 @@ mouse-hide-while-typing = true
 macos-titlebar-style = transparent
 macos-titlebar-style = tabs
 macos-option-as-alt = true
+# Cmd+Backspace / Cmd+Delete (macOS): kill to start of line
+keybind = cmd+backspace=text:\x15
