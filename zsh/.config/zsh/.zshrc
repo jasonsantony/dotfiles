@@ -32,7 +32,7 @@ mkdir -p -- \
     "$JUPYTER_RUNTIME_DIR"
 
 ZSH_THEME=""
-plugins=(git)
+plugins=(git history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 ### --- Prompt ---
@@ -115,5 +115,7 @@ bindkey '^E' end-of-line
 source $(brew --prefix)/share/zsh-autopair/autopair.zsh
 
 # History navigation
-bindkey '^P' up-line-or-search
-bindkey '^N' down-line-or-search
+bindkey -M viins '^P' history-substring-search-up
+bindkey -M viins '^N' history-substring-search-down
+bindkey -M vicmd '^P' history-substring-search-up
+bindkey -M vicmd '^N' history-substring-search-down
