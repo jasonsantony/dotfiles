@@ -26,8 +26,7 @@ return {
                 "SignColumn",
                 "CursorLine",
                 "CursorLineNr",
-                "StatusLine",
-                "StatusLineNC",
+                -- "StatusLine",
                 "EndOfBuffer",
             },
             extra_groups = {
@@ -38,6 +37,11 @@ return {
                 "NvimTreeNormalNC",
                 "NormalFloat",
                 "FloatBorder",
+                "NormalFloat",
+                "FloatBorder",
+                "WhichKeyNormal",
+                "WhichKeyBorder",
+                "WhichKeyFloat",
             },
             exclude_groups = {}, -- you can keep some groups opaque
         })
