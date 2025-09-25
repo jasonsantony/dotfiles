@@ -1,4 +1,6 @@
 after-startup-command = [
+  # Prevent firefox-based browsers from launching in safe mode
+  # due to opt as part of keybind
   'exec-and-forget /bin/launchctl setenv MOZ_DISABLE_SAFE_MODE_KEY 1',
 ]
 
@@ -190,7 +192,7 @@ alt-shift-m = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
 
-alt-b = 'exec-and-forget open -a Brave\ Browser'
+alt-z = 'exec-and-forget open -a Zen'
 alt-d = 'exec-and-forget open -a Discord'
 alt-s = 'exec-and-forget open -a Spotify'
 alt-m = 'exec-and-forget open -a Messages'
