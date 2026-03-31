@@ -81,12 +81,6 @@ ulimit -s unlimited 2>/dev/null || true
 # Shell integration
 source <(fzf --zsh)
 
-# Aerospace window fzf
-ff() {
-    aerospace list-windows --all |
-        fzf --bind 'enter:execute(zsh -c "aerospace focus --window-id {1}")+abort'
-}
-
 # ---- Starship ----
 eval "$(starship init zsh)"
 
