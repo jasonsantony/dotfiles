@@ -30,3 +30,8 @@ vim.keymap.set("n", "<C-S-k>", "<Cmd>WinShift up<CR>", { desc = "Move window up"
 vim.keymap.set("n", "<C-S-l>", "<Cmd>WinShift right<CR>", { desc = "Move window right" })
 -----------------------------
 -----------------------------
+
+-- Make <leader><space> open Snacks buffer picker
+vim.keymap.set("n", "<leader><space>", function()
+    Snacks.picker.buffers()
+end, { desc = "Buffers" })

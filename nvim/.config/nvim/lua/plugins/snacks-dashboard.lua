@@ -18,15 +18,6 @@ return {
 
                     {
                         icon = "",
-                        key = "s",
-                        desc = "sessions",
-                        action = function()
-                            require("utils.session-picker").session_picker()
-                        end,
-                    },
-
-                    {
-                        icon = "",
                         key = "l",
                         desc = "lazy",
                         action = ":Lazy",
