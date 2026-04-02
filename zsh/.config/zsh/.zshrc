@@ -84,6 +84,9 @@ source <(fzf --zsh)
 # ---- Starship ----
 eval "$(starship init zsh)"
 
+# ---- Zoxide ----
+eval "$(zoxide init --cmd cd zsh)"
+
 # Vi mode
 bindkey -v
 # Insert mode bindings (like a normal editor)
