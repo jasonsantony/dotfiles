@@ -26,7 +26,6 @@ return {
                 "SignColumn",
                 "CursorLine",
                 "CursorLineNr",
-                -- "StatusLine",
                 "EndOfBuffer",
             },
             extra_groups = {
@@ -42,6 +41,8 @@ return {
                 "WhichKeyNormal",
                 "WhichKeyBorder",
                 "WhichKeyFloat",
+                "TroubleNormal",
+                "TroubleNormalNC",
             },
             exclude_groups = {}, -- you can keep some groups opaque
         })
