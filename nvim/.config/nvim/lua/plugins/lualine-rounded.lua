@@ -29,7 +29,7 @@ return {
             },
             sections = {
                 lualine_a = {
-                    { "mode", right_padding = 1 },
+                    { "mode", separator = { left = "", right = "" }, right_padding = 1 },
                 },
 
                 lualine_b = { LazyVim.lualine.root_dir() },
@@ -104,6 +104,7 @@ return {
                         function()
                             return " " .. os.date("%R")
                         end,
+                        separator = { left = "", right = "" },
                         left_padding = 1,
                     },
                 },
@@ -114,22 +115,6 @@ return {
                 "fzf",
                 {
                     filetypes = { "lazy" },
-                    section_separators = { "", "" },
-                    component_separators = { "", "" },
-                    sections = {
-                        lualine_a = {
-                            { "lazy", separator = { left = "" }, right_padding = 1 },
-                        },
-                        lualine_z = {
-                            {
-                                function()
-                                    return " " .. os.date("%R")
-                                end,
-                                separator = { right = "" },
-                                left_padding = 1,
-                            },
-                        },
-                    },
                 },
             },
         }
