@@ -73,6 +73,8 @@ alias mv='mv -i'
 # a e s t h e t i c s
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias keyrepeat='defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"'
+alias keyhold='defaults delete NSGlobalDomain "ApplePressAndHoldEnabled"'
 
 # ---- System tweaks ----
 ulimit -s unlimited 2>/dev/null || true
