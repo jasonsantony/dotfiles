@@ -12,7 +12,6 @@ return {
         end
     end,
     opts = function()
-        -- PERF: we don't need this lualine require madness 🤷
         local lualine_require = require("lualine_require")
         lualine_require.require = require
 
@@ -29,7 +28,7 @@ return {
             },
             sections = {
                 lualine_a = {
-                    { "mode", separator = { left = "", right = "" }, right_padding = 1 },
+                    { "mode", separator = { left = "", right = "" }, right_padding = 1 },
                 },
 
                 lualine_b = { LazyVim.lualine.root_dir() },
@@ -104,7 +103,7 @@ return {
                         function()
                             return " " .. os.date("%R")
                         end,
-                        separator = { left = "", right = "" },
+                        separator = { left = "", right = "" },
                         left_padding = 1,
                     },
                 },
