@@ -56,7 +56,6 @@ mkdir -p -- "${HISTFILE:h}"
 # ---- Aliases ----
 # Jason's toolbox
 alias l='gls -lah --color=auto'
-alias vim='nvim' # open vim with vi
 alias python='python3'
 alias pip='pip3'
 alias lg='lazygit'
