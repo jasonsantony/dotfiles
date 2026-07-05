@@ -54,8 +54,9 @@ setopt histignorespace   # lines starting with space aren’t saved
 mkdir -p -- "${HISTFILE:h}"
 
 # ---- Aliases ----
-# Jason's toolbox
-alias l='gls -lah --color=auto'
+# General
+alias vim='nvim' # use `vi` for classic vim
+alias ls='gls -lah --color=auto'
 alias python='python3'
 alias pip='pip3'
 alias lg='lazygit'
@@ -69,14 +70,11 @@ alias ytmp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]" -o 
 alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'
-# a e s t h e t i c s
+# MacOS defaults
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias keyrepeat='defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"'
 alias keyhold='defaults delete NSGlobalDomain "ApplePressAndHoldEnabled"'
-
-# ---- System tweaks ----
-ulimit -s unlimited 2>/dev/null || true
 
 # ---- FZF ----
 # Shell integration
