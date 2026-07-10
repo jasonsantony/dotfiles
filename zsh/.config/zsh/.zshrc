@@ -56,7 +56,6 @@ mkdir -p -- "${HISTFILE:h}"
 # ---- Aliases ----
 # General
 alias vim='nvim' # use `vi` for classic vim
-alias ls='gls -lah --color=auto'
 alias python='python3'
 alias pip='pip3'
 alias lg='lazygit'
