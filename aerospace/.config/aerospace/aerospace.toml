@@ -174,7 +174,6 @@ alt-4 = 'workspace L4'
 alt-8 = 'workspace R1'
 alt-9 = 'workspace R2'
 alt-0 = 'workspace R3'
-alt-c = 'workspace calm'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace L1 --focus-follows-window'
