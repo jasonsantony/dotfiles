@@ -39,10 +39,6 @@ source $ZSH/oh-my-zsh.sh
 setopt prompt_subst
 
 # ---- History options (interactive only) ----
-bindkey -M viins '^P' up-history
-bindkey -M viins '^N' down-history
-bindkey -M vicmd '^P' up-history
-bindkey -M vicmd '^N' down-history
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export HISTSIZE=10000
 export SAVEHIST=10000
@@ -55,7 +51,6 @@ mkdir -p -- "${HISTFILE:h}"
 
 # ---- Aliases ----
 # General
-alias vim='nvim' # use `vi` for classic vim
 alias python='python3'
 alias pip='pip3'
 alias lg='lazygit'
