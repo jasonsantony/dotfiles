@@ -75,41 +75,24 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias keyrepeat='defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"'
 alias keyhold='defaults delete NSGlobalDomain "ApplePressAndHoldEnabled"'
 
-# ---- FZF ----
-# Shell integration
+# FZF
 source <(fzf --zsh)
 
-# ---- Starship ----
+# Starship
 eval "$(starship init zsh)"
 
-# ---- Zoxide ----
+# Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# Vi mode
-bindkey -v
-# Insert mode bindings (like a normal editor)
-bindkey -M viins '^H' backward-delete-char # ⌫ backspace
-bindkey -M viins '^?' backward-delete-char # ⌫ backspace alt encoding
-bindkey -M viins '^[[3~' delete-char       # ⌦ forward delete
-# Normal mode bindings (vim-like)
-bindkey -M vicmd '^[[3~' delete-char # ⌦ works like 'x'
-# Map "jk" in insert mode to Escape
-bindkey -M viins 'jk' vi-cmd-mode
-
-# Syntax highlighting (keep near bottom)
+# Syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^ ' autosuggest-accept
-bindkey -r '^E'
-bindkey '^E' end-of-line
 
 # Autopair
 source $(brew --prefix)/share/zsh-autopair/autopair.zsh
 
-# History navigation
-bindkey -M viins '^P' history-substring-search-up
-bindkey -M viins '^N' history-substring-search-down
-bindkey -M vicmd '^P' history-substring-search-up
-bindkey -M vicmd '^N' history-substring-search-down
+# Vi mode
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
