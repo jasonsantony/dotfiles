@@ -15,23 +15,13 @@ vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true, desc = "U
 vim.keymap.set("n", "<Tab>", ">>_", { noremap = true, silent = true, desc = "Indent line" })
 vim.keymap.set("n", "<S-Tab>", "<<_", { noremap = true, silent = true, desc = "Unindent line" })
 
------ Window management -----
------------------------------
--- 1. Focus between splits (already in LazyVim by default, but we add descriptions)
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Focus left window" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Focus below window" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Focus above window" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Focus right window" })
-
--- 2. Move entire windows (WinShift.nvim required)
-vim.keymap.set("n", "<C-S-h>", "<Cmd>WinShift left<CR>", { desc = "Move window left" })
-vim.keymap.set("n", "<C-S-j>", "<Cmd>WinShift down<CR>", { desc = "Move window down" })
-vim.keymap.set("n", "<C-S-k>", "<Cmd>WinShift up<CR>", { desc = "Move window up" })
-vim.keymap.set("n", "<C-S-l>", "<Cmd>WinShift right<CR>", { desc = "Move window right" })
------------------------------
------------------------------
-
 -- Make <leader><space> open Snacks buffer picker
 vim.keymap.set("n", "<leader><space>", function()
   Snacks.picker.buffers()
 end, { desc = "Buffers" })
+
+-- WinShift
+vim.keymap.set("n", "<C-S-h>", "<Cmd>WinShift left<CR>", { desc = "Move window left" })
+vim.keymap.set("n", "<C-S-j>", "<Cmd>WinShift down<CR>", { desc = "Move window down" })
+vim.keymap.set("n", "<C-S-k>", "<Cmd>WinShift up<CR>", { desc = "Move window up" })
+vim.keymap.set("n", "<C-S-l>", "<Cmd>WinShift right<CR>", { desc = "Move window right" })
