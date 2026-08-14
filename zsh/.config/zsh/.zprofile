@@ -17,9 +17,6 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# Locale (optional)
-export LANG="en_US.UTF-8"
-
 # Initialize Homebrew (Apple Silicon)
 if [[ -x /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"

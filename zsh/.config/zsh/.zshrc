@@ -8,37 +8,18 @@
 # - Load frameworks like Oh My Zsh.
 #
 # Notes:
-# - This is where you put user-facing tweaks (colors, completions, keybinds).
-# - Do NOT put global env vars here; those belong in ~/.zshenv or ~/.zprofile.
+# - This is where to put user-facing tweaks (colors, completions, keybinds).
+# - Try not to put global env vars here.
+# - Interactive-specific env vars are fine.
 # ============================
 
-# Ensure parent dirs for tools that won't create them
-# Tentatively: Git, Oh My Zsh, Python, Less, Go, npm, IPython, Jupyter
-# Rust toolchain is self-managing, no mkdir
-mkdir -p -- \
-    "$XDG_CONFIG_HOME/git" \
-    "$XDG_CACHE_HOME/zsh" \
-    "$XDG_CONFIG_HOME/starship" \
-    "$XDG_STATE_HOME/python" \
-    "$XDG_CACHE_HOME/less" \
-    "$GOPATH" \
-    "$GOPATH/bin" \
-    "$XDG_CONFIG_HOME/npm" \
-    "$XDG_CACHE_HOME/npm" \
-    "$XDG_DATA_HOME/npm" \
-    "$XDG_CONFIG_HOME/ipython" \
-    "$XDG_CONFIG_HOME/jupyter" \
-    "$XDG_DATA_HOME/jupyter" \
-    "$JUPYTER_RUNTIME_DIR"
-
-ZSH_THEME=""
 plugins=(git history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 ### --- Prompt ---
 setopt prompt_subst
 
-# ---- History options (interactive only) ----
+# ---- Interactive history options ----
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export HISTSIZE=10000
 export SAVEHIST=10000
@@ -47,7 +28,7 @@ setopt sharehistory      # share across sessions
 setopt histignorealldups # drop older duplicates
 setopt histreduceblanks  # trim extra spaces
 setopt histignorespace   # lines starting with space aren’t saved
-mkdir -p -- "${HISTFILE:h}"
+mkdir -p "${HISTFILE:h}"
 
 # ---- Aliases ----
 # General

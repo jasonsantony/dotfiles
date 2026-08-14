@@ -9,13 +9,11 @@
 # - Do NOT put aliases, functions, or interactive settings here.
 # ============================
 
-# XDG base dirs (fallbacks so we don't overwrite existing values)
+# XDG base dirs
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
-
-# /---- Intermediate dirs created/confirmed in .zshrc ----/
 
 # Git global config path
 export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
@@ -66,7 +64,7 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export JUPYTER_DATA_DIR="$XDG_DATA_HOME/jupyter"
 export JUPYTER_RUNTIME_DIR="$XDG_STATE_HOME/jupyter/runtime"
 
-# Ensure parent dirs for tools that won't create them
+# Parent dirs for tools that won't create them
 # Tentatively: Git, Oh My Zsh, Python, Less, Go, npm, IPython, Jupyter
 mkdir -p -- \
   "$XDG_CONFIG_HOME/git" \
