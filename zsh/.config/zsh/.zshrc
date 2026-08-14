@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 ### --- Prompt ---
 setopt prompt_subst
 
-# ---- Interactive history options ----
+# --- Interactive history options ---
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export HISTSIZE=10000
 export SAVEHIST=10000
@@ -30,8 +30,9 @@ setopt histreduceblanks  # trim extra spaces
 setopt histignorespace   # lines starting with space aren’t saved
 mkdir -p "${HISTFILE:h}"
 
-# ---- Aliases ----
+# --- Aliases ---
 # General
+alias home='cd; clear'
 alias vim='nvim'
 alias python='python3'
 alias pip='pip3'
@@ -52,6 +53,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias keyrepeat='defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"'
 alias keyhold='defaults delete NSGlobalDomain "ApplePressAndHoldEnabled"'
 
+# --- Package init ---
 # FZF
 source <(fzf --zsh)
 
