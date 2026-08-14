@@ -14,8 +14,8 @@
 # ============================
 
 # Terminal editor defaults
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Locale (optional)
 export LANG="en_US.UTF-8"

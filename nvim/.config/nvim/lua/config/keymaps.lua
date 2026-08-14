@@ -33,5 +33,5 @@ vim.keymap.set("n", "<C-S-l>", "<Cmd>WinShift right<CR>", { desc = "Move window 
 
 -- Make <leader><space> open Snacks buffer picker
 vim.keymap.set("n", "<leader><space>", function()
-    Snacks.picker.buffers()
+  Snacks.picker.buffers()
 end, { desc = "Buffers" })
