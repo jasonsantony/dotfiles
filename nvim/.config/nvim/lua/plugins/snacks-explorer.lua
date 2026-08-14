@@ -6,6 +6,14 @@ return {
         explorer = {
           hidden = true, -- show dotfiles
           ignored = true, -- include gitignored files
+          auto_close = true,
+          win = {
+            list = {
+              keys = {
+                ["."] = "tcd",
+              },
+            },
+          },
         },
       },
     },
