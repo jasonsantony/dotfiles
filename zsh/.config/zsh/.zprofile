@@ -23,7 +23,6 @@ if [[ -x /opt/homebrew/bin/brew ]]; then
 fi
 
 # --- WE LOVE THE XDG BASE DIRECTORY SPECIFICATION ---
-
 # XDG base dirs
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
@@ -33,8 +32,6 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 # Git global config path
 export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
 
-# Make zsh load the rest of its configs from ~/.config/zsh
-export ZDOTDIR="${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}"
 # Disable macOS Zsh sessions: use XDG STATE
 export SHELL_SESSIONS_DISABLE=1
 

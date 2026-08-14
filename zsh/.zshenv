@@ -5,8 +5,10 @@
 # (login, interactive, script, etc.).
 #
 # Notes:
-# - Does {x} really need to be run before every
-#   zsh? Even *scripts*???
-# - Will probably remain empty.
+# - Does {x} really need to be run for every zsh?
+#   Including *scripts*???
 # ============================
 
+# --- Point zsh to other configs
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export ZDOTDIR="${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}"
