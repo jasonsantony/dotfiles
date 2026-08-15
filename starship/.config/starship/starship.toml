@@ -45,8 +45,8 @@ symbol = ""
 disabled = false
 format = "[](fg:cyan)[ 󰘳 $user ]($style)[](fg:cyan) "
 show_always = true
-style_root = "bg:cyan fg:white"
-style_user = "bg:cyan fg:white"
+style_root = "bg:cyan fg:black"
+style_user = "bg:cyan fg:black"
 
 # Languages
 
