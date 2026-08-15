@@ -74,3 +74,4 @@ source $(brew --prefix)/share/zsh-autopair/autopair.zsh
 
 # Vi mode
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
