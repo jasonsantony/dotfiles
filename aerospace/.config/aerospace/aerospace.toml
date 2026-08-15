@@ -1,4 +1,5 @@
 after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=8.0',
   # Prevent firefox-based browsers from launching in safe mode
   # due to opt as part of keybind
   'exec-and-forget /bin/launchctl setenv MOZ_DISABLE_SAFE_MODE_KEY 1',
