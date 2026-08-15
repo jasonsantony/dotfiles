@@ -1,4 +1,4 @@
-theme = "Rose Pine Moon"
+config-file = ?auto/theme.ghostty
 window-width = 80
 window-height = 38
 window-padding-x = 16
