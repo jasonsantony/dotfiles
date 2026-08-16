@@ -13,10 +13,8 @@
 # - Interactive-specific env vars are fine.
 # ============================
 
-plugins=(git history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
-### --- Prompt ---
 setopt prompt_subst
 
 # --- Interactive history options ---
