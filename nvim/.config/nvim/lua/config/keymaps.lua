@@ -5,12 +5,6 @@
 -- Esc remap
 vim.keymap.set("i", "jk", "<Esc>")
 
--- Unindent in insert mode with Shift-Tab
-vim.keymap.set("i", "<S-Tab>", "<C-d>", { noremap = true, silent = true, desc = "Unindent" })
-
--- Unindent in visual mode with Shift-Tab (optional)
-vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true, desc = "Unindent" })
-
 -- Normal mode: indent/unindent but keep cursor in place
 vim.keymap.set("n", "<Tab>", ">>_", { noremap = true, silent = true, desc = "Indent line" })
 vim.keymap.set("n", "<S-Tab>", "<<_", { noremap = true, silent = true, desc = "Unindent line" })
