@@ -1,7 +1,7 @@
 # Config version for compatibility and deprecations
 # See: https://nikitabobko.github.io/AeroSpace/guide#config-version
 # Fallback value (if you omit the key): config-version = 1
-config-version = 2
+# config-version = 2
 
 after-startup-command = [
   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=8.0',
@@ -20,7 +20,7 @@ start-at-login = true
 
 # Automatically reload the config when the config file is saved
 # After setting this to true, reload once manually to start the auto-reloading
-auto-reload-config = true
+auto-reload-config = false
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -50,12 +50,6 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodness#disable-hide-app
 automatically-unhide-macos-hidden-apps = true
-
-# List of workspaces that should stay alive even when they contain no windows,
-# even when they are invisible.
-# This config option is only available since 'config-version = 2'
-# Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = []
 
 # [[on-window-detected]]
 # if.app-id = 'com.apple.systempreferences'
