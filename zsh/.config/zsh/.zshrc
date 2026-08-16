@@ -52,24 +52,17 @@ alias keyrepeat='defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool 
 alias keyhold='defaults delete NSGlobalDomain "ApplePressAndHoldEnabled"'
 
 # --- Package init ---
-# FZF
-source <(fzf --zsh)
-
 # Starship
 eval "$(starship init zsh)"
 
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# Syntax highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Autosuggestions
+# Homebrew zsh niceties
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Autopair
-source $(brew --prefix)/share/zsh-autopair/autopair.zsh
-
-# Vi mode
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+bindkey '^ ' autosuggest-accept
+bindkey -r '^E'
+bindkey '^E' end-of-line
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
