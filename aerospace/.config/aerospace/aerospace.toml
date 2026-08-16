@@ -1,3 +1,8 @@
+# Config version for compatibility and deprecations
+# See: https://nikitabobko.github.io/AeroSpace/guide#config-version
+# Fallback value (if you omit the key): config-version = 1
+config-version = 2
+
 after-startup-command = [
   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=8.0',
   # Prevent firefox-based browsers from launching in safe mode
@@ -5,23 +10,17 @@ after-startup-command = [
   'exec-and-forget /bin/launchctl setenv MOZ_DISABLE_SAFE_MODE_KEY 1',
 ]
 
-# JankyBorders
-# exec-on-workspace-change = [
-#   '/bin/bash',
-#   '-c',
-#   "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4",
-# ]
-# on-focus-changed = [
-# 'exec-and-forget /bin/bash -c "borders hidpi=on active_color=0xfffe640b inactive_color=0xffccd0da width=4 order=above"',
-# ]
-
 # HazeOver hook
-on-focus-changed = [
-  'exec-and-forget /usr/bin/osascript -e "tell application \"HazeOver\" to updateDimming"',
-]
+# on-focus-changed = [
+#   'exec-and-forget /usr/bin/osascript -e "tell application \"HazeOver\" to updateDimming"',
+# ]
 
 # Start AeroSpace at login
 start-at-login = true
+
+# Automatically reload the config when the config file is saved
+# After setting this to true, reload once manually to start the auto-reloading
+auto-reload-config = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -30,7 +29,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 300
+accordion-padding = 40
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -52,6 +51,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Also see: https://nikitabobko.github.io/AeroSpace/goodness#disable-hide-app
 automatically-unhide-macos-hidden-apps = true
 
+# List of workspaces that should stay alive even when they contain no windows,
+# even when they are invisible.
+# This config option is only available since 'config-version = 2'
+# Fallback value (if you omit the key): persistent-workspaces = []
+persistent-workspaces = []
+
 # [[on-window-detected]]
 # if.app-id = 'com.apple.systempreferences'
 # if.app-name-regex-substring = 'settings'
@@ -60,7 +65,6 @@ automatically-unhide-macos-hidden-apps = true
 # if.during-aerospace-startup = true
 # check-further-callbacks = true
 # run = ['layout floating', 'move-node-to-workspace S']  # The callback itself
-
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
@@ -172,8 +176,8 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace L1'
@@ -185,26 +189,26 @@ alt-9 = 'workspace R2'
 alt-0 = 'workspace R3'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace L1 --focus-follows-window'
-alt-shift-2 = 'move-node-to-workspace L2 --focus-follows-window'
-alt-shift-3 = 'move-node-to-workspace L3 --focus-follows-window'
-alt-shift-4 = 'move-node-to-workspace L4 --focus-follows-window'
-alt-shift-8 = 'move-node-to-workspace R1 --focus-follows-window'
-alt-shift-9 = 'move-node-to-workspace R2 --focus-follows-window'
-alt-shift-0 = 'move-node-to-workspace R3 --focus-follows-window'
+# Can use --focus-follows-window
+alt-shift-1 = 'move-node-to-workspace L1'
+alt-shift-2 = 'move-node-to-workspace L2'
+alt-shift-3 = 'move-node-to-workspace L3'
+alt-shift-4 = 'move-node-to-workspace L4'
+alt-shift-8 = 'move-node-to-workspace R1'
+alt-shift-9 = 'move-node-to-workspace R2'
+alt-shift-0 = 'move-node-to-workspace R3'
 
 alt-shift-m = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
-alt-shift-enter = 'mode apps'
 
+alt-enter = 'exec-and-forget open -a Ghostty'
 alt-b = 'exec-and-forget open -a Safari'
 alt-d = 'exec-and-forget open -a Discord'
 alt-s = 'exec-and-forget open -a Spotify'
 alt-m = 'exec-and-forget open -a Messages'
 alt-f = 'exec-and-forget open -a Finder'
-alt-t = 'exec-and-forget open -a Ghostty'
 alt-x = 'exec-and-forget open -a System\ Settings'
 
 # 'service' binding mode declaration.
@@ -218,5 +222,3 @@ f = [
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-[mode.apps.binding]
-alt-g = ['exec-and-forget open -a /opt/homebrew/bin/ghostty', 'mode main']
