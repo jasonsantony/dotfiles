@@ -6,6 +6,7 @@ return {
         explorer = {
           hidden = true, -- show dotfiles
           ignored = true, -- include gitignored files
+          layout = { preview = true },
           win = {
             list = {
               keys = {
