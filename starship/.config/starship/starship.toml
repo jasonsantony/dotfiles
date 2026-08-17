@@ -5,7 +5,7 @@ format = """
 $username\
 $directory\
 $git_branch\n \
-[󱞪](fg:magenta) \
+[󱞪](fg:red) \
 """
 [username]
 disabled = false
