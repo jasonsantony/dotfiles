@@ -7,32 +7,21 @@ $directory\
 $git_branch\n \
 [󱞪](fg:magenta) \
 """
+[username]
+disabled = false
+format = "[](fg:blue)[ 󰘳 $user ]($style)[](fg:blue) "
+show_always = true
+style_root = "bg:blue fg:black"
+style_user = "bg:blue fg:black"
 
 [directory]
-format = "[](fg:white)[ $path ]($style)[](fg:white) "
-style = "bg:white fg:black"
+format = "[](fg:bright-black)[ $path ]($style)[](fg:bright-black) "
+style = "bg:bright-black fg:blue"
 truncation_length = 3
 truncation_symbol = "…/"
 
-[directory.substitutions]
-Documents = "󰈙"
-Downloads = " "
-Music = " "
-Pictures = " "
-
-[fill]
-style = "fg:black"
-symbol = " "
-
 [git_branch]
-format = "[](fg:white)[ $symbol $branch ]($style)[](fg:white) "
-style = "bg:white fg:black"
+format = "[](fg:bright-black)[ $symbol $branch ]($style)[](fg:bright-black) "
+style = "bg:bright-black fg:blue"
 symbol = ""
-
-[username]
-disabled = false
-format = "[](fg:cyan)[ 󰘳 $user ]($style)[](fg:cyan) "
-show_always = true
-style_root = "bg:cyan fg:black"
-style_user = "bg:cyan fg:black"
 
