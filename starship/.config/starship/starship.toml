@@ -1,22 +1,10 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 $username\
 $directory\
-$git_branch\
-$fill\
-$c\
-$elixir\
-$elm\
-$golang\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$rust\
-$scala\
-$conda\
-$python\
-$time\n  \
+$git_branch\n \
 [󱞪](fg:magenta) \
 """
 
@@ -48,83 +36,3 @@ show_always = true
 style_root = "bg:cyan fg:black"
 style_user = "bg:cyan fg:black"
 
-# Languages
-
-[c]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[elixir]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[elm]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[golang]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[haskell]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[java]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[julia]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[nodejs]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = "󰎙 "
-
-[nim]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = "󰆥 "
-
-[rust]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[scala]
-
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = " "
-
-[python]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$version ]($style)[](fg:cyan)"
-disabled = false
-symbol = ' '
-
-[conda]
-style = "bg:cyan fg:green"
-format = " [](fg:cyan)[ $symbol$environment ]($style)[](fg:cyan)"
-disabled = false
-symbol = '🅒 '
