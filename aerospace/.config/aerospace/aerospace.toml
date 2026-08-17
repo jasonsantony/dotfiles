@@ -183,14 +183,13 @@ alt-9 = 'workspace R2'
 alt-0 = 'workspace R3'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-# Can use --focus-follows-window
-alt-shift-1 = 'move-node-to-workspace L1'
-alt-shift-2 = 'move-node-to-workspace L2'
-alt-shift-3 = 'move-node-to-workspace L3'
-alt-shift-4 = 'move-node-to-workspace L4'
-alt-shift-8 = 'move-node-to-workspace R1'
-alt-shift-9 = 'move-node-to-workspace R2'
-alt-shift-0 = 'move-node-to-workspace R3'
+alt-shift-1 = 'move-node-to-workspace L1 --focus-follows-window'
+alt-shift-2 = 'move-node-to-workspace L2 --focus-follows-window'
+alt-shift-3 = 'move-node-to-workspace L3 --focus-follows-window'
+alt-shift-4 = 'move-node-to-workspace L4 --focus-follows-window'
+alt-shift-8 = 'move-node-to-workspace R1 --focus-follows-window'
+alt-shift-9 = 'move-node-to-workspace R2 --focus-follows-window'
+alt-shift-0 = 'move-node-to-workspace R3 --focus-follows-window'
 
 alt-shift-m = 'move-workspace-to-monitor --wrap-around next'
 
