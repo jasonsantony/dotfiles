@@ -41,11 +41,6 @@ alias dotlg='cd ~/dotfiles && lazygit'
 # Better defaults
 alias grep='grep --color=auto'
 alias ytmp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]" -o "%(title)s.%(ext)s" --merge-output-format mp4'
-# Safety first
-alias cp='cp -i'
-alias rm='rm -i'
-alias mv='mv -i'
-# MacOS defaults
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias keyrepeat='defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"'
