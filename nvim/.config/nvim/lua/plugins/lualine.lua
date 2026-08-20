@@ -28,7 +28,7 @@ return {
       },
       sections = {
         lualine_a = {
-          { "mode", separator = { left = "", right = "" }, right_padding = 1 },
+          { "mode", separator = { left = "", right = "" }, right_padding = 1 },
         },
 
         lualine_b = { LazyVim.lualine.root_dir() },
@@ -103,7 +103,7 @@ return {
             function()
               return " " .. os.date("%R")
             end,
-            separator = { left = "", right = "" },
+            separator = { left = "", right = "" },
             left_padding = 1,
           },
         },
