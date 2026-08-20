@@ -12,9 +12,9 @@ after-startup-command = [
 ]
 
 # HazeOver hook
-on-focus-changed = [
-  'exec-and-forget /usr/bin/osascript -e "tell application \"HazeOver\" to updateDimming"',
-]
+# on-focus-changed = [
+#   'exec-and-forget /usr/bin/osascript -e "tell application \"HazeOver\" to updateDimming"',
+# ]
 
 # Start AeroSpace at login
 start-at-login = true
