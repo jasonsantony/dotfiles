@@ -38,13 +38,13 @@ alias lg='lazygit'
 # Dotfile stuff
 alias dot='cd ~/dotfiles'
 alias dotlg='cd ~/dotfiles && lazygit'
-# Better defaults
-alias grep='grep --color=auto'
-alias ytmp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]" -o "%(title)s.%(ext)s" --merge-output-format mp4'
+# MacOS defaults
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias keyrepeat='defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"'
 alias keyhold='defaults delete NSGlobalDomain "ApplePressAndHoldEnabled"'
+alias nodock='defaults write com.apple.dock "autohide-delay" -float "100.0" && killall Dock'
+alias dock='defaults write com.apple.dock "autohide-delay" -float "0.2" && killall Dock'
 
 # --- Package init ---
 # Starship
