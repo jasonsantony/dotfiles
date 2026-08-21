@@ -5,14 +5,14 @@ format = """
 $username\
 $directory\
 $git_branch\n \
-[󱞪](fg:bright-black) \
+[󱞪](fg:red) \
 """
 [username]
 disabled = false
-format = "[](fg:blue)[ 󰘳 $user ]($style)[](fg:blue) "
+format = "[](fg:black)[ 󰘳 $user ]($style)[](fg:black) "
 show_always = true
-style_root = "bg:blue fg:black"
-style_user = "bg:blue fg:black"
+style_root = "bg:black fg:bright-black"
+style_user = "bg:black fg:bright-black"
 
 [directory]
 format = "[](fg:bright-black)[ $path ]($style)[](fg:bright-black) "
