@@ -1,1 +1,1 @@
-# Built on [LazyVim](https://github.com/LazyVim/LazyVim).
+# Built on [LazyVim](https://github.com/LazyVim/LazyVim)
