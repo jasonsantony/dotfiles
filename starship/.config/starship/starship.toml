@@ -16,12 +16,12 @@ style_user = "bg:black fg:bright-black"
 
 [directory]
 format = "[](fg:bright-black)[ $path ]($style)[](fg:bright-black) "
-style = "bg:bright-black fg:blue"
+style = "bg:bright-black fg:black"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 format = "[](fg:bright-black)[ $symbol $branch ]($style)[](fg:bright-black) "
-style = "bg:bright-black fg:blue"
+style = "bg:bright-black fg:black"
 symbol = ""
 
