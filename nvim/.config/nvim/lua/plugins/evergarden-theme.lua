@@ -19,7 +19,4 @@ return {
       },
     },
   },
-  config = function()
-    vim.cmd("colorscheme evergarden-summer")
-  end,
 }
