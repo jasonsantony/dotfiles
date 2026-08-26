@@ -1,20 +1,12 @@
 config-file = ?auto/theme.ghostty
-window-width = 80
-window-height = 38
 window-padding-x = 16
 window-padding-balance = true
 window-padding-color = background
-# cursor-color = "#ffffff"
-# cursor-text = "#000000"
 cursor-invert-fg-bg = true
 adjust-cursor-thickness = 2
-# background-opacity = 0.50
-# background-blur-radius = 50
 font-family = "Meslo LG Nerd Font"
 font-size = 14
 mouse-hide-while-typing = true
 macos-titlebar-style = transparent
 macos-titlebar-style = tabs
 macos-option-as-alt = true
-# Cmd+Backspace / Cmd+Delete (macOS): kill to start of line
-keybind = cmd+backspace=text:\x15
