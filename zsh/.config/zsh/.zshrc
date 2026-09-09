@@ -31,10 +31,12 @@ mkdir -p "${HISTFILE:h}"
 # --- Aliases ---
 # General
 alias home='cd; clear'
-alias vim='nvim'
-alias python='python3'
-alias pip='pip3'
-alias lg='lazygit'
+alias ls="eza"
+alias l="eza -al --icons --git"
+alias vim="nvim"
+alias python="python3"
+alias pip="pip3"
+alias lg="lazygit"
 # Dotfile stuff
 alias dot='cd ~/dotfiles'
 alias dotlg='cd ~/dotfiles && lazygit'
