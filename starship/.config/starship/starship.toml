@@ -5,23 +5,23 @@ format = """
 $username\
 $directory\
 $git_branch\n \
-[󱞪](fg:red) \
+[󱞪](fg:bright-black) \
 """
 [username]
 disabled = false
-format = "[](fg:black)[ 󰘳 $user ]($style)[](fg:black) "
+format = "[](fg:red)[ 󰘳 $user ]($style)[](fg:red) "
 show_always = true
-style_root = "bg:black fg:red"
-style_user = "bg:black fg:red"
+style_root = "bg:red fg:black"
+style_user = "bg:red fg:black"
 
 [directory]
 format = "[](fg:black)[ $path ]($style)[](fg:black) "
-style = "bg:black fg:bright-black"
+style = "bg:black fg:red"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 format = "[](fg:black)[ $symbol $branch ]($style)[](fg:black) "
-style = "bg:black fg:bright-black"
+style = "bg:black fg:red"
 symbol = ""
 

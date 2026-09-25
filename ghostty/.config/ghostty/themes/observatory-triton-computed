@@ -1,0 +1,24 @@
+# Exported from https://paletty.dev
+
+palette = 0=#291515
+palette = 1=#a4726e
+palette = 2=#afd3aa
+palette = 3=#dfd0a7
+palette = 4=#b5bfe8
+palette = 5=#cb839b
+palette = 6=#9fd8d4
+palette = 7=#e5dcbd
+palette = 8=#7a7571
+palette = 9=#9f8185
+palette = 10=#0aee2f
+palette = 11=#cadf92
+palette = 12=#99cdf0
+palette = 13=#bf92be
+palette = 14=#17e8f3
+palette = 15=#f5ddc9
+background = #000000
+foreground = #cdc6c6
+cursor-color = #cdc6c6
+cursor-text = #000000
+selection-background = #47181d
+selection-foreground = #555d59
