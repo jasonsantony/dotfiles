@@ -44,6 +44,9 @@ export ZSH="$ZDOTDIR/ohmyzsh"
 # Starship config
 export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$XDG_CONFIG_HOME/starship/starship.toml}"
 
+# Zoxide dara dir
+export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
+
 # History files
 export PYTHONHISTFILE="$XDG_STATE_HOME/python/history" # persistent state
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"     # ephemeral-ish
@@ -77,6 +80,7 @@ mkdir -p -- \
   "$XDG_CONFIG_HOME/git" \
   "$XDG_CACHE_HOME/zsh" \
   "$XDG_CONFIG_HOME/starship" \
+  "$XDG_DATA_HOME/zoxide" \
   "$XDG_STATE_HOME/python" \
   "$XDG_CACHE_HOME/less" \
   "$GOPATH" \
