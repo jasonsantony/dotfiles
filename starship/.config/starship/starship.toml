@@ -9,10 +9,10 @@ $git_branch\n \
 """
 [username]
 disabled = false
-format = "[](fg:white)[ 󰘳 $user ]($style)[](fg:white) "
+format = "[](fg:blue)[ 󰘳 $user ]($style)[](fg:blue) "
 show_always = true
-style_root = "bg:white fg:black"
-style_user = "bg:white fg:black"
+style_root = "bg:blue fg:black"
+style_user = "bg:blue fg:black"
 
 [directory]
 format = "[](fg:black)[ $path ]($style)[](fg:black) "
