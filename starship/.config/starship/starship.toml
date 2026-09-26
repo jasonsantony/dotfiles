@@ -11,17 +11,17 @@ $git_branch\n \
 disabled = false
 format = "[](fg:blue)[ 󰘳 $user ]($style)[](fg:blue) "
 show_always = true
-style_root = "bg:blue fg:black"
-style_user = "bg:blue fg:black"
+style_root = "bg:blue fg:bright-black"
+style_user = "bg:blue fg:bright-black"
 
 [directory]
-format = "[](fg:black)[ $path ]($style)[](fg:black) "
-style = "bg:black fg:white"
+format = "[](fg:white)[ $path ]($style)[](fg:white) "
+style = "bg:white fg:bright-black"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
-format = "[](fg:black)[ $symbol $branch ]($style)[](fg:black) "
-style = "bg:black fg:white"
+format = "[](fg:white)[ $symbol $branch ]($style)[](fg:white) "
+style = "bg:white fg:bright-black"
 symbol = ""
 
