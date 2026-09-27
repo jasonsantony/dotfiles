@@ -45,7 +45,7 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias keyrepeat='defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false"'
 alias keyhold='defaults delete NSGlobalDomain "ApplePressAndHoldEnabled"'
-alias nodock='defaults write com.apple.dock "autohide-delay" -float "100.0" && killall Dock'
+alias nodock='defaults write com.apple.dock "autohide-delay" -float "10000.0" && killall Dock'
 alias dock='defaults write com.apple.dock "autohide-delay" -float "0.2" && killall Dock'
 
 # --- Package init ---
