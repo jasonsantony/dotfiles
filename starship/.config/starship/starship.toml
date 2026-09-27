@@ -1,27 +1,37 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+palette = "catppuccin-burgundy"
+
+[palettes.catppuccin-burgundy]
+f = '#F4CDE9'
+b = '#30191f'
+mid = '#44313B'
+
 format = """
 $username\
 $directory\
-$git_branch\n \
-[󱞪](fg:bright-black) \
+$git_branch\
+$git_status\n \
 """
 [username]
 disabled = false
-format = "[](fg:blue)[ 󰘳 $user ]($style)[](fg:blue) "
+format = "[](fg:mid)[ 󰘳 $user ]($style)[](fg:mid) "
 show_always = true
-style_root = "bg:blue fg:bright-black"
-style_user = "bg:blue fg:bright-black"
+style_root = "bg:mid fg:blue"
+style_user = "bg:mid fg:blue"
 
 [directory]
-format = "[](fg:white)[ $path ]($style)[](fg:white) "
-style = "bg:white fg:bright-black"
+format = "[](fg:mid)[ $path ]($style)[](fg:mid) "
+style = "bg:mid fg:f"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
-format = "[](fg:white)[ $symbol $branch ]($style)[](fg:white) "
-style = "bg:white fg:bright-black"
+format = "[](fg:mid)[ $symbol $branch ]($style)[](fg:mid) "
+style = "bg:mid fg:f"
 symbol = ""
+
+[git_status]
+disabled = false
 
