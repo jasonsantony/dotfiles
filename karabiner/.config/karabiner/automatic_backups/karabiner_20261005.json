@@ -108,7 +108,7 @@
                                 "to": [
                                     {
                                         "key_code": "display_brightness_decrement",
-                                        "modifiers": ["shift", "option"]
+                                        "modifiers": ["left_shift", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -131,7 +131,7 @@
                                 "to": [
                                     {
                                         "key_code": "display_brightness_increment",
-                                        "modifiers": ["shift", "option"]
+                                        "modifiers": ["left_shift", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -159,7 +159,7 @@
                                 "to": [
                                     {
                                         "key_code": "volume_decrement",
-                                        "modifiers": ["shift", "option"]
+                                        "modifiers": ["left_shift", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -182,7 +182,7 @@
                                 "to": [
                                     {
                                         "key_code": "volume_increment",
-                                        "modifiers": ["shift", "option"]
+                                        "modifiers": ["left_shift", "left_option"]
                                     }
                                 ],
                                 "type": "basic"
@@ -203,7 +203,7 @@
                             {
                                 "from": {
                                     "key_code": "f11",
-                                    "modifiers": { "mandatory": ["shift"] }
+                                    "modifiers": { "mandatory": ["left_shift"] }
                                 },
                                 "to": [{ "key_code": "volume_decrement" }],
                                 "type": "basic"
@@ -224,7 +224,7 @@
                             {
                                 "from": {
                                     "key_code": "f12",
-                                    "modifiers": { "mandatory": ["shift"] }
+                                    "modifiers": { "mandatory": ["left_shift"] }
                                 },
                                 "to": [{ "key_code": "volume_increment" }],
                                 "type": "basic"
